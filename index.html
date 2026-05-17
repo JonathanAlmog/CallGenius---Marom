@@ -287,52 +287,52 @@
                             שלב 2: בורר שירותים רשמי
                         </h3>
                         
-                        <!-- Rearranged Diagnostic Selection Grid (psychodidactic & adhd-doctor on top, moxo-only 3rd, then didactic & follow-up) -->
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4" id="diagnosis-grid">
+                        <!-- Rearranged Diagnostic Selection Grid -->
+                        <div class="grid grid-cols-2 gap-3 mb-4" id="diagnosis-grid">
                             <!-- 1. פסיכודידקטי (עליון 1) -->
-                            <button onclick="selectDiagnosis('psychodidactic')" id="diag-psychodidactic" class="diag-card p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan hover:bg-zinc-100 dark:hover:bg-zinc-800 text-right transition-all flex flex-col justify-between group">
+                            <button onclick="selectDiagnosis('psychodidactic')" id="diag-psychodidactic" class="diag-card col-span-1 p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan hover:bg-zinc-100 dark:hover:bg-zinc-800 text-right transition-all flex flex-col justify-between group">
                                 <span class="text-brand-cyan text-xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-solid fa-brain"></i></span>
                                 <div>
                                     <h4 class="font-bold text-sm text-zinc-900 dark:text-white">פסיכודידקטי</h4>
-                                    <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-1">פסיכולוגי מקיף + למידה</p>
+                                    <p class="text-[10px] text-zinc-550 dark:text-zinc-400 mt-1">פסיכולוגי מקיף + למידה</p>
                                 </div>
                             </button>
                             <!-- 2. אבחון קשב (עליון 2) -->
-                            <button onclick="selectDiagnosis('adhd-doctor')" id="diag-adhd-doctor" class="diag-card p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan hover:bg-zinc-100 dark:hover:bg-zinc-800 text-right transition-all flex flex-col justify-between group">
+                            <button onclick="selectDiagnosis('adhd-doctor')" id="diag-adhd-doctor" class="diag-card col-span-1 p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan hover:bg-zinc-100 dark:hover:bg-zinc-800 text-right transition-all flex flex-col justify-between group">
                                 <span class="text-indigo-500 text-xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-solid fa-user-doctor"></i></span>
                                 <div>
                                     <h4 class="font-bold text-sm text-zinc-900 dark:text-white">אבחון קשב (רופא)</h4>
-                                    <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-1">קליני מלא + מבדק MOXO</p>
+                                    <p class="text-[10px] text-zinc-550 dark:text-zinc-400 mt-1">קליני מלא + מבדק MOXO</p>
                                 </div>
                             </button>
-                            <!-- 3. מבדק MOXO בלבד (שלישי) -->
-                            <button onclick="selectDiagnosis('moxo-only')" id="diag-moxo-only" class="diag-card p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan hover:bg-zinc-100 dark:hover:bg-zinc-850 text-right transition-all flex flex-col justify-between group">
+                            <!-- 3. מבדק MOXO בלבד (שלישי - col-span-2) -->
+                            <button onclick="selectDiagnosis('moxo-only')" id="diag-moxo-only" class="diag-card col-span-2 p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan hover:bg-zinc-100 dark:hover:bg-zinc-800 text-right transition-all flex flex-col justify-between group">
                                 <span class="text-purple-500 text-xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-solid fa-desktop"></i></span>
                                 <div>
                                     <h4 class="font-bold text-sm text-zinc-900 dark:text-white">מבדק MOXO בלבד</h4>
-                                    <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-1">מבדק ממוחשב (חלק 1/2)</p>
+                                    <p class="text-[10px] text-zinc-550 dark:text-zinc-400 mt-1">מבדק ממוחשב (חלק 1/2)</p>
                                 </div>
                             </button>
                             <!-- 4. דידקטי בלבד -->
-                            <button onclick="selectDiagnosis('didactic')" id="diag-didactic" class="diag-card p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan hover:bg-zinc-100 dark:hover:bg-zinc-800 text-right transition-all flex flex-col justify-between group">
+                            <button onclick="selectDiagnosis('didactic')" id="diag-didactic" class="diag-card col-span-1 p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan hover:bg-zinc-100 dark:hover:bg-zinc-800 text-right transition-all flex flex-col justify-between group">
                                 <span class="text-brand-teal text-xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-solid fa-graduation-cap"></i></span>
                                 <div>
                                     <h4 class="font-bold text-sm text-zinc-900 dark:text-white">דידקטי בלבד</h4>
-                                    <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-1">מיפוי כישורי למידה בלבד</p>
+                                    <p class="text-[10px] text-zinc-550 dark:text-zinc-400 mt-1">מיפוי כישורי למידה בלבד</p>
                                 </div>
                             </button>
                             <!-- 5. שיחת מעקב / הפניה -->
-                            <button onclick="selectDiagnosis('follow-up')" id="diag-follow-up" class="diag-card p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan hover:bg-zinc-100 dark:hover:bg-zinc-800 text-right transition-all flex flex-col justify-between group">
+                            <button onclick="selectDiagnosis('follow-up')" id="diag-follow-up" class="diag-card col-span-1 p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan hover:bg-zinc-100 dark:hover:bg-zinc-800 text-right transition-all flex flex-col justify-between group">
                                 <span class="text-amber-500 text-xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-solid fa-comments"></i></span>
                                 <div>
                                     <h4 class="font-bold text-sm text-zinc-900 dark:text-white">שיחת מעקב / הפניה</h4>
-                                    <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-1">מעקב תרופתי / הפניה בלבד</p>
+                                    <p class="text-[10px] text-zinc-550 dark:text-zinc-400 mt-1">מעקב תרופתי / הפניה בלבד</p>
                                 </div>
                             </button>
                         </div>
 
                         <!-- Sub-options for MOXO parts / Follow-up types -->
-                        <div id="sub-options-box" class="hidden mt-4 bg-zinc-100 dark:bg-zinc-950 p-4 rounded-xl border border-zinc-300 dark:border-zinc-850 space-y-3 mb-4">
+                        <div id="sub-options-box" class="hidden mt-4 bg-zinc-100 dark:bg-zinc-955 p-4 rounded-xl border border-zinc-300 dark:border-zinc-850 space-y-3 mb-4">
                             <span class="block text-xs font-bold text-zinc-700 dark:text-zinc-300">אפשרויות שירות ספציפיות:</span>
                             
                             <!-- MOXO Parts Option -->
@@ -388,11 +388,11 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                                 <div class="bg-white dark:bg-zinc-900/60 p-3.5 rounded-lg border border-zinc-200 dark:border-zinc-800">
                                     <span class="text-brand-cyan font-black block mb-1">מטרת האבחון / המבדק:</span>
-                                    <p id="diag-info-purpose" class="text-zinc-700 dark:text-zinc-300 leading-relaxed"></p>
+                                    <p id="diag-info-purpose" class="text-zinc-700 dark:text-zinc-350 leading-relaxed"></p>
                                 </div>
                                 <div class="bg-white dark:bg-zinc-900/60 p-3.5 rounded-lg border border-zinc-200 dark:border-zinc-800">
                                     <span class="text-brand-teal font-black block mb-1">על ידי מי הוא מוכר ומקובל:</span>
-                                    <p id="diag-info-recognition" class="text-zinc-700 dark:text-zinc-300 leading-relaxed"></p>
+                                    <p id="diag-info-recognition" class="text-zinc-700 dark:text-zinc-350 leading-relaxed"></p>
                                 </div>
                             </div>
                         </div>
@@ -410,14 +410,14 @@
                             <span class="block text-xs font-bold text-zinc-600 dark:text-zinc-400">הרחבות למידה פדגוגיות (מכיתה ג' ומעלה):</span>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                                 <label class="flex items-center gap-3 p-3 bg-zinc-50 dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-800 transition">
-                                    <input type="checkbox" id="ext-math" onchange="calculatePrices();" class="rounded border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 text-brand-cyan focus:ring-brand-cyan h-5 w-5">
+                                    <input type="checkbox" id="ext-math" onchange="calculatePrices();" class="rounded border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-850 text-brand-cyan focus:ring-brand-cyan h-5 w-5">
                                     <div>
                                         <span class="text-sm font-bold block text-zinc-800 dark:text-white">הרחבה במתמטיקה 🧮</span>
                                         <span class="text-[10px] text-zinc-500 dark:text-zinc-400">אפיון הבנת מושגים ופתרון תרגילים כמותיים</span>
                                     </div>
                                 </label>
                                 <label class="flex items-center gap-3 p-3 bg-zinc-50 dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-800 transition">
-                                    <input type="checkbox" id="ext-english" onchange="calculatePrices();" class="rounded border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 text-brand-cyan focus:ring-brand-cyan h-5 w-5">
+                                    <input type="checkbox" id="ext-english" onchange="calculatePrices();" class="rounded border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-850 text-brand-cyan focus:ring-brand-cyan h-5 w-5">
                                     <div>
                                         <span class="text-sm font-bold block text-zinc-800 dark:text-white">הרחבה באנגלית 🇬🇧</span>
                                         <span class="text-[10px] text-zinc-500 dark:text-zinc-400">הערכת מיומנויות השפה, מילון והקראה</span>
@@ -425,7 +425,7 @@
                                 </label>
                             </div>
                             <div class="mt-2 bg-zinc-50 dark:bg-zinc-950 p-2 rounded-lg border border-zinc-200 dark:border-zinc-800">
-                                <p class="text-[11px] text-zinc-600 dark:text-zinc-300">
+                                <p class="text-[11px] text-zinc-650 dark:text-zinc-305">
                                     📌 <strong>מדיניות הרחבות:</strong> הרחבה אחת מתותוספת ב-500 ₪. שתי הרחבות יחד ב-850 ₪ בלבד (חיסכון של 150 ₪).
                                 </p>
                             </div>
@@ -439,21 +439,21 @@
                                     <input type="radio" name="express-option" value="none" checked onchange="calculatePrices();" class="rounded-full border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 text-brand-cyan focus:ring-brand-cyan h-5 w-5">
                                     <div>
                                         <span class="text-xs font-bold block text-zinc-800 dark:text-white">סטנדרטי (עד 30 קלנדרי)</span>
-                                        <span class="text-[10px] text-zinc-500 dark:text-zinc-400">ללא תוספת תשלום</span>
+                                        <span class="text-[10px] text-zinc-550 dark:text-zinc-400">ללא תוספת תשלום</span>
                                     </div>
                                 </label>
                                 <label class="flex items-center gap-3 p-3 bg-zinc-50 dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-800 transition">
                                     <input type="radio" name="express-option" value="express" onchange="calculatePrices();" class="rounded-full border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 text-brand-cyan focus:ring-brand-cyan h-5 w-5">
                                     <div>
                                         <span class="text-xs font-bold block text-brand-teal">אקספרס (עד 12 ימי עסקים)</span>
-                                        <span class="text-[10px] text-zinc-500 dark:text-zinc-400">תוספת של 99 ₪</span>
+                                        <span class="text-[10px] text-zinc-550 dark:text-zinc-400">תוספת של 99 ₪</span>
                                     </div>
                                 </label>
                                 <label class="flex items-center gap-3 p-3 bg-zinc-50 dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-800 transition">
                                     <input type="radio" name="express-option" value="express-plus" onchange="calculatePrices();" class="rounded-full border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 text-brand-cyan focus:ring-brand-cyan h-5 w-5">
                                     <div>
                                         <span class="text-xs font-bold block text-brand-cyan">סופר אקספרס (עד 4 ימי עסקים)</span>
-                                        <span class="text-[10px] text-zinc-500 dark:text-zinc-400 font-bold">תוספת של 199 ₪</span>
+                                        <span class="text-[10px] text-zinc-550 dark:text-zinc-400 font-bold">תוספת של 199 ₪</span>
                                     </div>
                                 </label>
                             </div>
@@ -476,19 +476,19 @@
 
                         <!-- Dynamic Disclaimer Text based on selected Diagnosis -->
                         <div class="bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 rounded-xl">
-                            <span class="text-xs font-bold text-zinc-500 dark:text-zinc-400 block mb-2">נוסח הסבר מקצועי להקראה חובה:</span>
+                            <span class="text-xs font-bold text-zinc-550 dark:text-zinc-400 block mb-2">נוסח הסבר מקצועי להקראה חובה:</span>
                             <div id="dynamic-disclaimer-box" class="text-sm font-semibold text-brand-cyan leading-relaxed pr-3 border-r-2 border-brand-cyan">
                                 יש לבחור תחילה סוג שירות בשלב 2 על מנת להציג את ההבהרה המתאימה.
                             </div>
                         </div>
 
-                        <!-- Absolute Legal Limitations Warning (Malo & Bituach Leumi) -->
-                        <div class="bg-red-50 dark:bg-red-955/20 border-l-4 border-brand-danger rounded-r-xl p-4 space-y-2">
-                            <span class="text-sm font-black text-red-700 dark:text-red-400 flex items-center gap-1">
-                                <i class="fa-solid fa-triangle-exclamation"></i>
+                        <!-- Absolute Legal Limitations Warning (Malo & Bituach Leumi) - Readability & Contrast Fixed to Red-100 and Dark Red Text -->
+                        <div class="bg-red-100 dark:bg-red-950/70 border-r-4 border-brand-danger rounded-l-xl p-5 space-y-3 shadow-sm">
+                            <span class="text-sm font-black text-red-950 dark:text-red-100 flex items-center gap-2">
+                                <i class="fa-solid fa-triangle-exclamation text-brand-danger"></i>
                                 מגבלות קבילות חוקיות קשיחות - איסור הטעיה:
                             </span>
-                            <ul class="list-disc list-inside text-xs text-zinc-700 dark:text-zinc-300 space-y-1.5 leading-relaxed">
+                            <ul class="list-disc list-inside text-xs text-red-900 dark:text-red-200 space-y-2 leading-relaxed font-bold">
                                 <li><strong>ביטוח לאומי:</strong> אבחוני מרום (פסיכודידקטי, דידקטי וקשב) **אינם** עומדים בדרישות ביטוח לאומי. לצורך ביטוח לאומי נדרש אבחון מנוירולוג או פסיכיאטר מומחה בלבד. מבדק מוקסו עצמאי קביל רק אם ההפניה המקורית היא מנוירולוג/פסיכיאטר.</li>
                                 <li><strong>מאל"ו, מת"ל ואקדמיה:</strong> מרום אינה עובדת עם מאל"ו (המרכז הארצי לבחינות והערכה). אבחונים דרכנו אינם תקפים עבור מוסדות להשכלה גבוהה, השלמת בגרויות, מבחני אמירנט, או קבלת התאמות פסיכומטרי. אין להציע אבחון חלופי למי שמבקש "מת"ל" - הפנו ישירות למאל"ו.</li>
                                 <li><strong>מבחני לשכה:</strong> אבחוני קשב ואבחונים פסיכודידקטיים ממרום **אינם** תקפים למבחני לשכה (עורכי דין, רואי חשבון, סיעוד, רפואה). לצורך מבחני לשכה נדרש אבחון מנוירולוג או פסיכיאטר מוסמך הכולל מילוי שאלון ייעודי של מרכז הבחינות.</li>
@@ -497,7 +497,7 @@
 
                         <!-- Checklists confirmation -->
                         <div class="pt-3 border-t border-zinc-200 dark:border-zinc-800 space-y-2.5">
-                            <span class="block text-xs font-bold text-zinc-500 dark:text-zinc-400">צ'קליסט הצהרות נציג מחייב:</span>
+                            <span class="block text-xs font-bold text-zinc-550 dark:text-zinc-400">צ'קליסט הצהרות נציג מחייב:</span>
                             <label class="flex items-start gap-3 cursor-pointer">
                                 <input type="checkbox" id="chk-read-disclaimer" onchange="validateDisclaimers();" class="mt-1 rounded border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 text-brand-cyan focus:ring-brand-cyan h-4 w-4">
                                 <span class="text-xs text-zinc-700 dark:text-zinc-300 font-semibold">הקראתי במדויק את גילוי הנאות הרפואי/פסיכולוגי המתאים לסוג האבחון שנבחר.</span>
@@ -548,7 +548,7 @@
                             </span>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <div>
-                                    <label class="block text-[11px] text-zinc-600 dark:text-zinc-400 mb-1">תאריך התור העתידי ביומן:</label>
+                                    <label class="block text-[11px] text-zinc-650 dark:text-zinc-400 mb-1">תאריך התור העתידי ביומן:</label>
                                     <input type="date" id="appointment-date" onchange="calculateDueDates();" class="w-full bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-lg p-2 text-xs text-zinc-900 dark:text-white focus:outline-none focus:border-brand-cyan text-left">
                                 </div>
                                 <div class="bg-white dark:bg-zinc-900/40 p-2.5 rounded-lg flex flex-col justify-center space-y-1 border border-zinc-200 dark:border-zinc-800">
@@ -579,7 +579,7 @@
             <!-- CRM Textbox Block (Dynamic View - High contrast WHITE text over dark box) -->
             <div class="bg-zinc-100 dark:bg-brand-darkCard border border-zinc-200 dark:border-zinc-800 p-4 rounded-2xl shadow-sm space-y-3 relative mb-6">
                 <div class="flex justify-between items-center">
-                    <span class="text-xs font-black text-zinc-750 dark:text-zinc-300 flex items-center gap-1.5">
+                    <span class="text-xs font-black text-zinc-800 dark:text-zinc-300 flex items-center gap-1.5">
                         <i class="fa-solid fa-paste text-brand-cyan"></i>
                         סיכום CRM מוכן להעתקה ל-RAPID
                     </span>
@@ -598,31 +598,34 @@
                     <i class="fa-solid fa-pen-to-square text-brand-teal"></i>
                     הערות שיחה חופשיות של הנציג:
                 </label>
-                <textarea id="free-notes" oninput="updateCRM();" placeholder="הקלד כאן נקודות קריטיות שעלו בשיחה, קשיים מיוחדים וכו'. המידע יוזרק אוטומטית לסוף סיכום ה-CRM..." class="w-full h-24 bg-[#FEF9C3] dark:bg-[#451a03]/40 border-l-4 border-amber-400 dark:border-amber-650 rounded-xl p-3 text-xs text-amber-950 dark:text-amber-100 font-medium focus:outline-none focus:border-amber-500 placeholder-amber-600/50 dark:placeholder-amber-400/40 shadow-sm transition"></textarea>
+                <textarea id="free-notes" oninput="updateCRM();" placeholder="הקלד כאן נקודות קריטיות שעלו בשיחה, קשיים מיוחדים וכו'. המידע יוזרק אוטומטית לסוף סיכום ה-CRM..." class="w-full h-24 bg-[#FEF9C3] dark:bg-[#451a03]/40 border-l-4 border-amber-400 dark:border-amber-600 rounded-xl p-3 text-xs text-amber-950 dark:text-amber-100 font-medium focus:outline-none focus:border-amber-500 placeholder-amber-600/50 dark:placeholder-amber-400/40 shadow-sm transition"></textarea>
             </div>
 
-            <!-- Right Column Navigation Tabs: Copilot, Shift Checklist, Rapid -->
+            <!-- Right Column Navigation Tabs: Copilot, Shift Checklist, Rapid, Objections -->
             <div class="flex-1 flex flex-col min-h-[380px] mb-6">
-                <!-- Tabs headers -->
+                <!-- Tabs headers (Now showing 4 beautifully designed tabs) -->
                 <div class="flex border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 rounded-t-xl overflow-hidden shrink-0">
-                    <button id="tab-btn-copilot" onclick="switchRightTab('copilot')" class="flex-1 py-2.5 text-xs font-bold text-center border-b-2 border-brand-cyan bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white transition">
-                        <i class="fa-solid fa-robot mr-1"></i> AI קופילוט מרום (RAG)
+                    <button id="tab-btn-copilot" onclick="switchRightTab('copilot')" class="flex-1 py-2.5 text-[11px] font-bold text-center border-b-2 border-brand-cyan bg-white dark:bg-zinc-955 text-zinc-900 dark:text-white transition whitespace-nowrap">
+                        <i class="fa-solid fa-robot mr-0.5"></i> AI קופילוט
                     </button>
-                    <button id="tab-btn-checklist" onclick="switchRightTab('checklist')" class="flex-1 py-2.5 text-xs font-bold text-center text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850 transition">
-                        <i class="fa-solid fa-list-check mr-1"></i> צ'קליסט משמרת
+                    <button id="tab-btn-checklist" onclick="switchRightTab('checklist')" class="flex-1 py-2.5 text-[11px] font-bold text-center text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850 transition whitespace-nowrap">
+                        <i class="fa-solid fa-list-check mr-0.5"></i> צ'קליסט
                     </button>
-                    <button id="tab-btn-rapid" onclick="switchRightTab('rapid')" class="flex-1 py-2.5 text-xs font-bold text-center text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850 transition">
-                        <i class="fa-solid fa-desktop mr-1"></i> מדריך Rapid
+                    <button id="tab-btn-rapid" onclick="switchRightTab('rapid')" class="flex-1 py-2.5 text-[11px] font-bold text-center text-zinc-550 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850 transition whitespace-nowrap">
+                        <i class="fa-solid fa-desktop mr-0.5"></i> Rapid
+                    </button>
+                    <button id="tab-btn-objections" onclick="switchRightTab('objections')" class="flex-1 py-2.5 text-[11px] font-bold text-center text-zinc-550 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850 transition whitespace-nowrap">
+                        <i class="fa-solid fa-shield-halved mr-0.5 text-brand-danger"></i> התנגדויות 🚨
                     </button>
                 </div>
 
                 <!-- Tab content container -->
-                <div class="flex-1 bg-zinc-50 dark:bg-zinc-900 border-x border-b border-zinc-200 dark:border-zinc-800 rounded-b-xl p-4 flex flex-col overflow-hidden">
+                <div class="flex-1 bg-zinc-50 dark:bg-zinc-900 border-x border-b border-zinc-200 dark:border-zinc-800 rounded-b-xl p-4 flex flex-col overflow-hidden text-zinc-900 dark:text-zinc-100">
                     
-                    <!-- TAB 1: Copilot (Marom RAG AI Assistant) -->
-                    <div id="tab-content-copilot" class="flex-1 flex flex-col space-y-3 overflow-hidden">
+                    <!-- TAB 1: Copilot (Marom RAG AI Assistant) - FIXED USER TEXT VISIBILITY -->
+                    <div id="tab-content-copilot" class="flex-1 flex flex-col space-y-3 overflow-hidden text-zinc-900 dark:text-zinc-100">
                         <div class="bg-white dark:bg-zinc-950 p-2 rounded-lg border border-zinc-200 dark:border-zinc-800 flex justify-between items-center shrink-0">
-                            <p class="text-[9px] text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-[75%]">
+                            <p class="text-[9px] leading-relaxed max-w-[75%] text-zinc-700 dark:text-zinc-300">
                                 🤖 <strong>קופילוט מרום:</strong> מאומן על מסמכי מרום הרשמיים בלבד (כולל ביטולים, מאל"ו, הכנה למוקסו, ביטוחים).
                             </p>
                             <!-- API Key / Model switcher (discreet toggler to debug 404s) -->
@@ -636,29 +639,29 @@
                             <span class="font-bold text-zinc-800 dark:text-zinc-200 block">הגדרות חיבור Gemini API:</span>
                             <div>
                                 <label class="block text-[10px] text-zinc-500 mb-0.5">מפתח API פעיל (Gemini):</label>
-                                <input type="text" id="ai-api-key-input" oninput="saveCustomApiKey();" placeholder="מפתח ברירת מחדל מרום פעיל..." class="w-full bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded p-1 text-xs text-left">
+                                <input type="text" id="ai-api-key-input" oninput="saveCustomApiKey();" placeholder="מפתח ברירת מחדל מרום פעיל..." class="w-full bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded p-1 text-xs text-left text-zinc-900 dark:text-zinc-100">
                             </div>
                             <div>
                                 <label class="block text-[10px] text-zinc-500 mb-0.5">מודל שירות:</label>
-                                <select id="ai-model-select" onchange="saveCustomModel();" class="w-full bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded p-1 text-xs">
+                                <select id="ai-model-select" onchange="saveCustomModel();" class="w-full bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded p-1 text-xs text-zinc-900 dark:text-zinc-100">
                                     <option value="gemini-2.5-flash-preview-09-2025" selected>gemini-2.5-flash-preview-09-2025 (ברירת מחדל)</option>
                                     <option value="gemini-2.5-flash">gemini-2.5-flash (חלופי יציב - פותר שגיאות 404)</option>
                                 </select>
                             </div>
                         </div>
 
-                        <!-- Messages display -->
-                        <div id="ai-chat-history" class="flex-1 overflow-y-auto space-y-2 bg-white dark:bg-zinc-950 p-3 rounded-lg border border-zinc-200 dark:border-zinc-800 min-h-[120px]">
-                            <div class="bg-zinc-50 dark:bg-zinc-900 p-2 rounded-lg text-xs leading-relaxed text-zinc-700 dark:text-zinc-300">
+                        <!-- Messages display (Fixed Contrast for Chat History text) -->
+                        <div id="ai-chat-history" class="flex-1 overflow-y-auto space-y-2 bg-white dark:bg-zinc-950 p-3 rounded-lg border border-zinc-200 dark:border-zinc-800 min-h-[120px] text-zinc-900 dark:text-zinc-100">
+                            <div class="bg-zinc-50 dark:bg-zinc-900 p-2 rounded-lg text-xs leading-relaxed text-zinc-900 dark:text-zinc-150">
                                 <span class="text-brand-cyan font-bold block mb-1">קופילוט מרום:</span>
                                 שלום! כיצד אוכל לסייע לך בנושאי מחירונים מדויקים, נהלים משפטיים, חוקי ביטוח, מטרות האבחונים או מדיניות הביטולים המעודכנת?
                             </div>
                         </div>
 
-                        <!-- User Prompt Input -->
+                        <!-- User Prompt Input (FIXED TYPING WHITE-TEXT COLOR BUG) -->
                         <div class="flex gap-2 shrink-0">
-                            <input type="text" id="ai-user-query" onkeydown="handleChatKeyPress(event);" placeholder="שאל שאלה (לדוגמה: מה דמי הביטול של פסיכודידקטי בתוך יומיים?)" class="flex-1 bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 rounded-lg px-3 py-2 text-xs text-zinc-900 dark:text-white focus:outline-none focus:border-brand-cyan">
-                            <button onclick="askCopilot();" id="btn-ask-ai" class="bg-brand-cyan hover:bg-cyan-500 text-slate-950 font-black px-3 py-2 rounded-lg text-xs transition">
+                            <input type="text" id="ai-user-query" onkeydown="handleChatKeyPress(event);" placeholder="הקלד כאן... (לדוגמה: איך מכינים למבדק מוקסו?)" class="flex-1 bg-zinc-100 dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 rounded-lg px-3 py-2 text-xs text-zinc-900 dark:text-zinc-100 placeholder-zinc-500 dark:placeholder-zinc-400 focus:outline-none focus:border-brand-cyan">
+                            <button onclick="askCopilot();" id="btn-ask-ai" class="bg-brand-cyan hover:bg-cyan-500 text-slate-950 font-black px-3 py-2 rounded-lg text-xs transition shadow">
                                 <i class="fa-solid fa-paper-plane"></i>
                             </button>
                         </div>
@@ -671,51 +674,51 @@
                             <button id="btn-chk-close" onclick="switchChecklistType('close')" class="flex-1 text-center py-1 text-xs font-bold text-zinc-500 hover:text-zinc-800 dark:hover:text-white">סגירת משמרת 🌃</button>
                         </div>
                         
-                        <!-- Opening Checklist items -->
+                        <!-- Opening Checklist items (Fixed white text contrast issue on light/dark mode) -->
                         <div id="checklist-open-items" class="space-y-2">
-                            <label class="flex items-start gap-3 p-2 bg-white dark:bg-zinc-955/60 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-950 cursor-pointer">
-                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 dark:border-zinc-700 text-brand-teal h-4 w-4">
-                                <span class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">התחברות לכלל המערכות: מחשב, רשת, מערכת CRM Rapid, טלפוניה ווואטסאפ עסקי.</span>
+                            <label class="flex items-start gap-3 p-3 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-700/80 cursor-pointer shadow-sm text-zinc-900 dark:text-zinc-100">
+                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 dark:border-zinc-650 text-brand-teal h-4 w-4 shrink-0">
+                                <span class="text-xs font-semibold leading-relaxed">התחברות לכלל המערכות: מחשב, רשת, מערכת CRM Rapid, טלפוניה ווואטסאפ עסקי.</span>
                             </label>
-                            <label class="flex items-start gap-3 p-2 bg-white dark:bg-zinc-955/60 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-950 cursor-pointer">
-                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 dark:border-zinc-700 text-brand-teal h-4 w-4">
-                                <span class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">בדיקת לידים חדשים שנכנסו במהלך הלילה/בוקר - טיפול מיידי בעדיפות ראשונה!</span>
+                            <label class="flex items-start gap-3 p-3 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-700/80 cursor-pointer shadow-sm text-zinc-900 dark:text-zinc-100">
+                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 dark:border-zinc-650 text-brand-teal h-4 w-4 shrink-0">
+                                <span class="text-xs font-semibold leading-relaxed">בדיקת לידים חדשים שנכנסו במהלך הלילה/בוקר - טיפול מיידי בעדיפות ראשונה!</span>
                             </label>
-                            <label class="flex items-start gap-3 p-2 bg-white dark:bg-zinc-955/60 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-950 cursor-pointer">
-                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 dark:border-zinc-700 text-brand-teal h-4 w-4">
-                                <span class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">מעבר על לידים קיימים בטיפול (בדיקת סטטוסים, חזרה לממתינים, מעקב undecided).</span>
+                            <label class="flex items-start gap-3 p-3 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-700/80 cursor-pointer shadow-sm text-zinc-900 dark:text-zinc-100">
+                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 dark:border-zinc-650 text-brand-teal h-4 w-4 shrink-0">
+                                <span class="text-xs font-semibold leading-relaxed">מעבר על לידים קיימים בטיפול (בדיקת סטטוסים, חזרה לממתינים, מעקב undecided).</span>
                             </label>
-                            <label class="flex items-start gap-3 p-2 bg-white dark:bg-zinc-955/60 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-950 cursor-pointer">
-                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 text-brand-teal h-4 w-4">
-                                <span class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">בדיקת יומן תורים פעיל להיום וזיהוי חלונות פנויים למילוי דחוף.</span>
+                            <label class="flex items-start gap-3 p-3 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-700/80 cursor-pointer shadow-sm text-zinc-900 dark:text-zinc-100">
+                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 text-brand-teal h-4 w-4 shrink-0">
+                                <span class="text-xs font-semibold leading-relaxed">בדיקת יומן תורים פעיל להיום וזיהוי חלונות פנויים למילוי דחוף.</span>
                             </label>
-                            <label class="flex items-start gap-3 p-2 bg-white dark:bg-zinc-955/60 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-950 cursor-pointer">
-                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 text-brand-teal h-4 w-4">
-                                <span class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">אימות שליטה במידע המקצועי, המחירונים ותנאי הסבסוד של קופות החולים.</span>
+                            <label class="flex items-start gap-3 p-3 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-700/80 cursor-pointer shadow-sm text-zinc-900 dark:text-zinc-100">
+                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 text-brand-teal h-4 w-4 shrink-0">
+                                <span class="text-xs font-semibold leading-relaxed">אימות שליטה במידע המקצועי, המחירונים ותנאי הסבסוד של קופות החולים.</span>
                             </label>
                         </div>
 
                         <!-- Closing Checklist items -->
                         <div id="checklist-close-items" class="hidden space-y-2">
-                            <label class="flex items-start gap-3 p-2 bg-white dark:bg-zinc-955/60 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-950 cursor-pointer">
-                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 text-brand-teal h-4 w-4">
-                                <span class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">וידוא תיעוד וסיכום CRM תקין לכלל הלידים והשיחות שטופלו היום (אין להשאיר ללא סטטוס!).</span>
+                            <label class="flex items-start gap-3 p-3 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-700/80 cursor-pointer shadow-sm text-zinc-900 dark:text-zinc-100">
+                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 text-brand-teal h-4 w-4 shrink-0">
+                                <span class="text-xs font-semibold leading-relaxed">וידוא תיעוד וסיכום CRM תקין לכלל הלידים והשיחות שטופלו היום (אין להשאיר ללא סטטוס!).</span>
                             </label>
-                            <label class="flex items-start gap-3 p-2 bg-white dark:bg-zinc-955/60 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-950 cursor-pointer">
-                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 text-brand-teal h-4 w-4">
-                                <span class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">הגדרת משימות המשך (פולו-אפ) ברורות ב-CRM כולל תאריך, שעה וסיבת חזרה.</span>
+                            <label class="flex items-start gap-3 p-3 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-700/80 cursor-pointer shadow-sm text-zinc-900 dark:text-zinc-100">
+                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 text-brand-teal h-4 w-4 shrink-0">
+                                <span class="text-xs font-semibold leading-relaxed">הגדרת משימות המשך (פולו-אפ) ברורות ב-CRM כולל תאריך, שעה וסיבת חזרה.</span>
                             </label>
-                            <label class="flex items-start gap-3 p-2 bg-white dark:bg-zinc-955/60 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-950 cursor-pointer">
-                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 text-brand-teal h-4 w-4">
-                                <span class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">בדיקת תקינות התורים שנקבעו: פרטי לקוח מלאים, סכומי RAPID נפרדים, ושליחת הנחיות.</span>
+                            <label class="flex items-start gap-3 p-3 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-700/80 cursor-pointer shadow-sm text-zinc-900 dark:text-zinc-100">
+                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 text-brand-teal h-4 w-4 shrink-0">
+                                <span class="text-xs font-semibold leading-relaxed">בדיקת תקינות התורים שנקבעו: פרטי לקוח מלאים, סכומי RAPID נפרדים, ושליחת הנחיות.</span>
                             </label>
-                            <label class="flex items-start gap-3 p-2 bg-white dark:bg-zinc-955/60 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-950 cursor-pointer">
-                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 text-brand-teal h-4 w-4">
-                                <span class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">מענה וטיפול בכלל הפניות הפתוחות בערוצי הווטסאפ והמייל המשרדיים.</span>
+                            <label class="flex items-start gap-3 p-3 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-700/80 cursor-pointer shadow-sm text-zinc-900 dark:text-zinc-100">
+                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 text-brand-teal h-4 w-4 shrink-0">
+                                <span class="text-xs font-semibold leading-relaxed">מענה וטיפול בכלל הפניות הפתוחות בערוצי הווטסאפ והמייל המשרדיים.</span>
                             </label>
-                            <label class="flex items-start gap-3 p-2 bg-white dark:bg-zinc-955/60 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-950 cursor-pointer">
-                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 text-brand-teal h-4 w-4">
-                                <span class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">עדכון והסלמה של מקרים חריגים (לקוחות לא מרוצים, תקלות רשת) למנהל המשמרת.</span>
+                            <label class="flex items-start gap-3 p-3 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-700/80 cursor-pointer shadow-sm text-zinc-900 dark:text-zinc-100">
+                                <input type="checkbox" class="mt-0.5 rounded border-zinc-300 text-brand-teal h-4 w-4 shrink-0">
+                                <span class="text-xs font-semibold leading-relaxed">עדכון והסלמה של מקרים חריגים (לקוחות לא מרוצים, תקלות רשת) למנהל המשמרת.</span>
                             </label>
                         </div>
                     </div>
@@ -723,19 +726,85 @@
                     <!-- TAB 3: Rapid Workflow Guide -->
                     <div id="tab-content-rapid" class="flex-1 hidden space-y-3 overflow-y-auto text-xs leading-relaxed">
                         <span class="font-bold text-zinc-850 dark:text-zinc-200 block border-b pb-1">מדריך עבודה: צ'קליסטים ב-Rapid 📊</span>
-                        <p class="text-zinc-700 dark:text-zinc-350">הצ'קליסט ב-Rapid הוא כלי העבודה המרכזי של צוות המשרד. הוא "פותח" משימות אדמיניסטרטיביות אוטומטית לקראת יום האבחון.</p>
+                        <p class="text-zinc-700 dark:text-zinc-350 font-medium">הצ'קליסט ב-Rapid הוא כלי העבודה המרכזי של צוות המשרד. הוא "פותח" משימות אדמיניסטרטיביות אוטומטית לקראת יום האבחון.</p>
                         <div class="bg-white dark:bg-zinc-950 p-2.5 rounded-lg border border-zinc-200 dark:border-zinc-800 space-y-2">
                             <span class="font-bold text-brand-cyan block">נוהל ייזום - חובה על המכירות:</span>
-                            <p class="text-[11px]">מיד לאחר תיאום תור ביומן ל<strong>אבחון קשב, פסיכודידקטי או מבדק MOXO</strong>, חובה לשייך את הוריאציה המתאימה של הצ'קליסט לפגישה!</p>
-                            <p class="text-[11px] text-red-500 dark:text-red-400 font-bold">⚠️ אי-שיוך הצ'קליסט משמעותו שהלקוח "שקוף" לצוות האדמיניסטרציה, ומשימות חיוניות לא יבוצעו!</p>
+                            <p class="text-[11px] font-semibold">מיד לאחר תיאום תור ביומן ל<strong>אבחון קשב, פסיכודידקטי או מבדק MOXO</strong>, חובה לשייך את הוריאציה המתאימה של הצ'קליסט לפגישה!</p>
+                            <p class="text-[11px] text-red-500 dark:text-red-400 font-black">⚠️ אי-שיוך הצ'קליסט משמעותו שהלקוח "שקוף" לצוות האדמיניסטרציה, ומשימות חיוניות לא יבוצעו!</p>
                         </div>
-                        <div class="bg-white dark:bg-zinc-950 p-2.5 rounded-lg border border-zinc-200 dark:border-zinc-800 space-y-1 text-[11px]">
+                        <div class="bg-white dark:bg-zinc-950 p-2.5 rounded-lg border border-zinc-200 dark:border-zinc-800 space-y-1 text-[11px] font-semibold">
                             <span class="font-bold text-brand-teal block">ניהול משימות ולוחות זמנים חכמים:</span>
-                            <ul class="list-disc list-inside space-y-1 text-zinc-600 dark:text-zinc-400">
-                                <li><strong>תאריכי יעד (Due Dates):</strong> המערכת מחשבת אוטומטית לאחור (למשל: דד-ליין הגשת שאלוני הורים/מורים ביומן נקבע ל-7 ימים לפני האבחון).</li>
+                            <ul class="list-disc list-inside space-y-1 text-zinc-600 dark:text-zinc-450">
+                                <li><strong>תאריכי יעד (Due Dates):</strong> המערכת מחשבת אוטומטית לאחור (דד-ליין הגשת שאלוני הורים/מורים ביומן נקבע ל-7 ימים לפני האבחון).</li>
                                 <li><strong>מקרי דחף:</strong> בתורים שנקבעו לפחות מ-3 ימים, תאריך היעד למשימה ישונה ל-"היום" באופן מיידי.</li>
                                 <li><strong>הורים נשואים/גרושים:</strong> אם הלקוח אינו גרוש, יש להיכנס לפריטי הצ'קליסט ב-Rapid, ללחוץ על ה-3 נקודות ליד סעיף "הסכמת הורים גרושים" ולמחוק אותו ידנית כדי לעמוד על 100% השלמה.</li>
                             </ul>
+                        </div>
+                    </div>
+
+                    <!-- TAB 4: Handling Objections ("טיפול בהתנגדויות" - Quick click emergency responses) -->
+                    <div id="tab-content-objections" class="flex-1 hidden space-y-3 overflow-y-auto">
+                        <span class="text-xs font-bold text-zinc-750 dark:text-zinc-300 block mb-1">טיפול בהתנגדויות בזמן אמת - "עזרה ראשונה" לנציג 🚨</span>
+                        
+                        <!-- Emergency Calm Down Cards -->
+                        <div class="bg-amber-100 dark:bg-amber-950/20 border-r-4 border-amber-500 p-3.5 rounded-l-lg text-xs text-amber-950 dark:text-amber-100 space-y-1 font-semibold">
+                            <span class="font-black block text-sm"><i class="fa-solid fa-peace mr-1"></i> דברים שחשוב לזכור במצבי לחץ:</span>
+                            <ul class="list-disc list-inside space-y-1 text-[11px] leading-relaxed">
+                                <li><strong>קח נשימה עמוקה של 3 שניות:</strong> אל תתפרץ לדברי הלקוח ותן לו להשלים את המשפט.</li>
+                                <li><strong>התנגדות היא לא אישית:</strong> הלקוח מביע חוסר ודאות או דאגה רפואית/כלכלית לילד שלו.</li>
+                                <li><strong>הקשבה יוצרת אמון:</strong> חבר קודם לרגש ("אני מבינה אותך לגמרי...") ורק אז תציע את הפתרון.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Quick Reference Objection Cards -->
+                        <div class="space-y-3">
+                            <!-- Objection Card 1 -->
+                            <div class="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl p-3 shadow-sm hover:border-zinc-350 dark:hover:border-zinc-750 transition text-right">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs font-black text-red-600 dark:text-red-400"><i class="fa-solid fa-coins mr-1"></i> יקר לי</span>
+                                    <span class="text-[9px] bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300 font-bold px-2 py-0.5 rounded">מענה קליני</span>
+                                </div>
+                                <p class="text-[11px] leading-relaxed text-zinc-800 dark:text-zinc-200 bg-zinc-100 dark:bg-zinc-900 p-2.5 rounded border border-zinc-200 dark:border-zinc-800 mb-1.5 font-semibold">
+                                    "אני מבינה אותך לגמרי, זו בהחלט הוצאה חשובה. אבל ברגע שמבינים שזה משהו שיכול להשפיע על הילד לאורך זמן ולמנוע הרבה תסכול ופערים לימודיים - מבינים שההשקעה הזו מחזירה שקט נפשי ומעניקה פתרון לטווח הארוך."
+                                </p>
+                                <span class="text-[9px] text-zinc-500 font-bold">💡 טיפ: דוגמה לחיסכון במקום המשך ניסוי וטעייה עם הילד.</span>
+                            </div>
+
+                            <!-- Objection Card 2 -->
+                            <div class="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl p-3 shadow-sm hover:border-zinc-350 dark:hover:border-zinc-750 transition text-right">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs font-black text-brand-accent"><i class="fa-solid fa-circle-question mr-1"></i> רוצה לחשוב / להתייעץ</span>
+                                    <span class="text-[9px] bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 font-bold px-2 py-0.5 rounded">מענה קליני</span>
+                                </div>
+                                <p class="text-[11px] leading-relaxed text-zinc-800 dark:text-zinc-200 bg-zinc-100 dark:bg-zinc-900 p-2.5 rounded border border-zinc-200 dark:border-zinc-800 mb-1.5 font-semibold">
+                                    "בטח, זה לגמרי מובן. רק כדי לעזור לי להבין מה גורם לך להתלבט? אני שואלת כי הרבה פעמים זה פשוט חוסר ודאות לגבי התהליך והפגישה עצמה נועדה בדיוק כדי לעשות לכם סדר."
+                                </p>
+                                <span class="text-[9px] text-zinc-500 font-bold">💡 טיפ: חלץ את שורש חוסר הביטחון (פחד מתווית/אבחון וכו').</span>
+                            </div>
+
+                            <!-- Objection Card 3 -->
+                            <div class="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl p-3 shadow-sm hover:border-zinc-350 dark:hover:border-zinc-750 transition text-right">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs font-black text-brand-teal"><i class="fa-solid fa-hourglass-half mr-1"></i> לא דחוף עכשיו / נחכה</span>
+                                    <span class="text-[9px] bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-300 font-bold px-2 py-0.5 rounded">מענה קליני</span>
+                                </div>
+                                <p class="text-[11px] leading-relaxed text-zinc-800 dark:text-zinc-200 bg-zinc-100 dark:bg-zinc-900 p-2.5 rounded border border-zinc-200 dark:border-zinc-800 mb-1.5 font-semibold">
+                                    "אני מבינה אותך, רק חשוב לדעת שלרוב כשמחכים ומעכבים, הפער בלימודים פשוט גדל והקושי הרגשי מתעצם. עדיף לבדוק עכשיו ולהיות רגועים שהילד מקבל את התמיכה הנכונה בזמן."
+                                </p>
+                                <span class="text-[9px] text-zinc-500 font-bold">💡 טיפ: הדגש שילדים לא מצמצמים פערים לבד ללא התערבות.</span>
+                            </div>
+
+                            <!-- Objection Card 4 -->
+                            <div class="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl p-3 shadow-sm hover:border-zinc-350 dark:hover:border-zinc-750 transition text-right">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs font-black text-purple-600 dark:text-purple-400"><i class="fa-solid fa-phone-flip mr-1"></i> אני אחזור אליכם</span>
+                                    <span class="text-[9px] bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 font-bold px-2 py-0.5 rounded">מענה קליני</span>
+                                </div>
+                                <p class="text-[11px] leading-relaxed text-zinc-800 dark:text-zinc-200 bg-zinc-100 dark:bg-zinc-900 p-2.5 rounded border border-zinc-200 dark:border-zinc-800 mb-1.5 font-semibold">
+                                    "מעולה, מתי הכי נוח שאחזור אליך כדי שלא נפספס? התורים מתמלאים במהירות ואני רוצה לוודא שנשמור לכם מועד נוח לפגישה."
+                                </p>
+                                <span class="text-[9px] text-zinc-500 font-bold">💡 טיפ: קבע יום ושעה ספציפיים (נעל את הפולו-אפ).</span>
+                            </div>
                         </div>
                     </div>
 
@@ -752,7 +821,7 @@
                 <div class="grid grid-cols-2 gap-2">
                     <div>
                         <label class="block text-[10px] text-zinc-500 dark:text-zinc-400 mb-1">סוג השירות:</label>
-                        <select id="calc-cancel-type" onchange="calculateCancellationFee();" class="w-full bg-white dark:bg-zinc-950 border border-zinc-350 dark:border-zinc-800 rounded-lg p-1.5 text-xs text-zinc-900 dark:text-white focus:outline-none">
+                        <select id="calc-cancel-type" onchange="calculateCancellationFee();" class="w-full bg-white dark:bg-zinc-955 border border-zinc-350 dark:border-zinc-800 rounded-lg p-1.5 text-xs text-zinc-900 dark:text-white focus:outline-none">
                             <option value="psychodidactic">דידקטי / פסיכודידקטי</option>
                             <option value="adhd">אבחון קשב (רופא)</option>
                             <option value="follow-up">שיחת מעקב עם רופא</option>
@@ -762,7 +831,7 @@
                     </div>
                     <div>
                         <label class="block text-[10px] text-zinc-500 dark:text-zinc-400 mb-1">מועד הודעת הביטול:</label>
-                        <select id="calc-cancel-time" onchange="calculateCancellationFee();" class="w-full bg-white dark:bg-zinc-950 border border-zinc-350 dark:border-zinc-800 rounded-lg p-1.5 text-xs text-zinc-900 dark:text-white focus:outline-none">
+                        <select id="calc-cancel-time" onchange="calculateCancellationFee();" class="w-full bg-white dark:bg-zinc-955 border border-zinc-350 dark:border-zinc-800 rounded-lg p-1.5 text-xs text-zinc-900 dark:text-white focus:outline-none">
                             <option value="14days">עד 14 ימי עסקים מיום הרכישה</option>
                             <option value="2-14days">מהיום ה-15 ועד 2 ימי עסקים לפני התור</option>
                             <option value="under-2days">בתוך פחות מ-2 ימי עסקים לפני התור</option>
@@ -774,7 +843,7 @@
                 <div class="grid grid-cols-2 gap-2 pt-1">
                     <div>
                         <label class="block text-[10px] text-zinc-500 dark:text-zinc-400 mb-1">סוג המשימה / דחייה:</label>
-                        <select id="calc-postpone-time" onchange="calculateCancellationFee();" class="w-full bg-white dark:bg-zinc-950 border border-zinc-350 dark:border-zinc-800 rounded-lg p-1.5 text-xs text-zinc-900 dark:text-white focus:outline-none">
+                        <select id="calc-postpone-time" onchange="calculateCancellationFee();" class="w-full bg-white dark:bg-zinc-955 border border-zinc-350 dark:border-zinc-800 rounded-lg p-1.5 text-xs text-zinc-900 dark:text-white focus:outline-none">
                             <option value="none">-- חישוב ביטול בלבד --</option>
                             <option value="over-4days">דחייה מעל 4 ימי עסקים מראש</option>
                             <option value="under-4days-1">דחייה פחות מ-4 ימים מראש (פעם ראשונה)</option>
@@ -901,8 +970,8 @@
             </button>
         </div>
 
-        <!-- Modal Body Content -->
-        <div class="p-6 overflow-y-auto text-sm leading-relaxed text-zinc-800 dark:text-zinc-200 space-y-4 text-right" id="modal-body">
+        <!-- Modal Body Content with Crisp High Contrast Text (No gray on gray) -->
+        <div class="p-6 overflow-y-auto text-sm leading-relaxed text-zinc-900 dark:text-zinc-100 space-y-4 text-right" id="modal-body">
             <!-- Set by JS -->
         </div>
 
@@ -926,15 +995,15 @@
             title: 'אבחון פסיכודידקטי - מטרות וקבילות',
             summary: 'מבנה האבחון, תוקף חוקי והסברים על ההכרה במשרד החינוך',
             content: `
-                <p><strong>אבחון פסיכודידקטי</strong> הוא תהליך הערכה רחב ומקיף שמטרתו לבחון את הקשר ההדדי בין תפקודי הלמידה והיכולות הקוגניטיביות לבין המצב הרגשי של הנבדק. האבחון מבוצע כולו במפגש פרונטלי אחד האורך כשעתיים (לא כולל הרחבות) על ידי <strong>פסיכולוג חינוכי מוסמך</strong>.</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold"><strong>אבחון פסיכודידקטי</strong> הוא תהליך הערכה רחב ומקיף שמטרתו לבחון את הקשר ההדדי בין תפקודי הלמידה והיכולות הקוגניטיביות לבין המצב הרגשי של הנבדק. האבחון מבוצע כולו במפגש פרונטלי אחד האורך כשעתיים (לא כולל הרחבות) על ידי <strong>פסיכולוג חינוכי מוסמך</strong>.</p>
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">מה בודקים באבחון?</h4>
-                <ul class="list-disc list-inside space-y-1 text-zinc-700 dark:text-zinc-350">
+                <ul class="list-disc list-inside space-y-1 text-zinc-900 dark:text-zinc-100 font-semibold">
                     <li><strong>הערכה דידקטית (לימודית):</strong> בודקת קריאה (קצב, דיוק והבנת הנקרא), כתיבה (בהירות, שגיאות, יכולת ארגון), חשבון (הבנת מושגים ופתרון) וקשיי למידה ספציפיים.</li>
                     <li><strong>הערכה פסיכולוגית (רגשית וקוגניטיבית):</strong> בודקת תפקודים ניהוליים, זיכרון, רמת משכל (IQ), קשב, מוטיבציה וקשיים רגשיים המשפיעים על הלמידה.</li>
                 </ul>
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">הכרה ותוקף חוקי:</h4>
-                <p><strong>משרד החינוך מכיר באבחון זה באופן מלא.</strong> האבחון עומד בכל הדרישות ומעניק זכאות חוקית להתאמות והקלות לימודיות (תוספת זמן, הקראה, השמעת שאלונים, כתיבה במחשב, שימוש במחשבון, דף נוסחאות מורחב, מילונית באנגלית וכו') ברמות 1, 2 ו-3 (כולל בחינות בגרות).</p>
-                <p><strong>תוקף האבחון:</strong> תקף ל-5 שנים. ילדים שמבצעים את האבחון בכיתה ז' או במהלך החופש שבין ו' ל-ז' זכאים לתוקף מורחב של <strong>6 שנים</strong> (על מנת לכסות את כלל בחינות הבגרות).</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold"><strong>משרד החינוך מכיר באבחון זה באופן מלא.</strong> האבחון עומד בכל הדרישות ומעניק זכאות חוקית להתאמות והקלות לימודיות (תוספת זמן, הקראה, השמעת שאלונים, כתיבה במחשב, שימוש במחשבון, דף נוסחאות מורחב, מילונית באנגלית וכו') ברמות 1, 2 ו-3 (כולל בחינות בגרות).</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold"><strong>תוקף האבחון:</strong> תקף ל-5 שנים. ילדים שמבצעים את האבחון בכיתה ז' או במהלך החופש שבין ו' ל-ז' זכאים לתוקף מורחב של <strong>6 שנים</strong> (על מנת לכסות את כלל בחינות הבגרות).</p>
             `
         },
         {
@@ -943,15 +1012,15 @@
             title: 'אבחון קשב וריכוז - תהליך רפואי',
             summary: 'מי מבצע את האבחון, שלבי התהליך ודרישות מסמכי קדם חובה',
             content: `
-                <p><strong>אבחון קשב וריכוז (ADHD)</strong> במרום הוא תהליך רפואי-קליני מוסמך המתבצע על ידי <strong>רופא קשב וריכוז מוסמך</strong> המוכר ומאושר על ידי משרד הבריאות (רופאי ילדים או משפחה שעברו הכשרה מיוחדת בקשב וריכוז).</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold"><strong>אבחון קשב וריכוז (ADHD)</strong> במרום הוא תהליך רפואי-קליני מוסמך המתבצע על ידי <strong>רופא קשב וריכוז מוסמך</strong> המוכר ומאושר על ידי משרד הבריאות (רופאי ילדים או משפחה שעברו הכשרה מיוחדת בקשב וריכוז).</p>
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">שלבי האבחון (מבוצע ביום אחד פרונטלי!):</h4>
-                <ol class="list-decimal list-inside space-y-1 text-zinc-700 dark:text-zinc-350">
+                <ol class="list-decimal list-inside space-y-1 text-zinc-900 dark:text-zinc-100 font-semibold">
                     <li><strong>פגישת היכרות קלינית פרונטלית עם הרופא:</strong> איסוף נתונים התפתחותיים, רפואיים והתנהגותיים.</li>
                     <li><strong>מבדק MOXO ממוחשב:</strong> הערכת תפקודי קשב, ריכוז, אימפולסיביות והיפראקטיביות (בדיקה זו מבוצעת ללא כדור כחלק מחבילת האבחון).</li>
                     <li><strong>פגישת סיכום:</strong> ניתוח ממצאי המבדק והשאלונים, קביעת אבחנה רפואית רשמית, המלצות טיפול ומתן מרשם תרופתי מותאם במידת הצורך. דוח הסיכום נשלח למייל עד 7 ימים ממועד הביצוע.</li>
                 </ol>
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">מסמכי חובה חמורים (ללא אלו הרופא לא יוכל לקבוע אבחנה):</h4>
-                <ul class="list-disc list-inside space-y-1.5 text-zinc-700 dark:text-zinc-350">
+                <ul class="list-disc list-inside space-y-1.5 text-zinc-900 dark:text-zinc-100 font-semibold">
                     <li><strong>שאלוני קשב (הורים ומורה):</strong> חובה למלא שאלון הורה ושאלון מורה (לילדים) או שאלון אישי (למבוגרים). לא ניתן לאבחן ללא מידע על תפקוד הנבדק בסביבות שונות (בית/מסגרת חינוכית).</li>
                     <li><strong>סיכום מידע רפואי:</strong> חובה לשלוח מראש מהרופא המטפל בקופה. למרום אין גישה לתיק הרפואי. הרופא חייב לוודא שאין מחלות רקע, רקע פסיכיאטרי או חשד לאוטיזם (ASD) שמשפיעים על האבחנה.</li>
                 </ul>
@@ -963,13 +1032,13 @@
             title: 'מדריך מבדק MOXO והנחיות קפדניות',
             summary: 'מה בודקים, הבדלי TOVA, הפניות תקינות והכנת המטופל',
             content: `
-                <p><strong>מבדק MOXO</strong> הוא כלי ממוחשב אובייקטיבי לבדיקת תפקודי קשב לאורך זמן, הכולל מסיחים ויזואליים ואודיטוריים המדמים סביבה טבעית. הבדיקה מבוצעת על מחשב, אינה תלויה בשפה (הוראות ניתנות בעברית, ערבית, אנגלית, רוסית, צרפתית, ספרדית ועוד) ומיועדת לגילאי 6 עד 99.</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold"><strong>מבדק MOXO</strong> הוא כלי ממוחשב אובייקטיבי לבדיקת תפקודי קשב לאורך זמן, הכולל מסיחים ויזואליים ואודיטוריים המדמים סביבה טבעית. הבדיקה מבוצעת על מחשב, אינה תלויה בשפה (הוראות ניתנות בעברית, ערבית, אנגלית, רוסית, צרפתית, ספרדית ועוד) ומיועדת לגילאי 6 עד 99.</p>
                 <h4 class="font-bold text-zinc-955 dark:text-white mt-3">מה ההבדל בין TOVA ל-MOXO?</h4>
-                <p>שניהם מבדקים ממוחשבים אובייקטיביים. מבדק TOVA הוא ישן יותר וכולל פחות הסחות דעת, בעוד מבדק MOXO הוא מתקדם יותר, מדמה סביבה אמיתית ומאתגר את הנבדק עם מגוון מסיחים קוליים וחזותיים ברמות שונות.</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">שניהם מבדקים ממוחשבים אובייקטיביים. מבדק TOVA הוא ישן יותר וכולל פחות הסחות דעת, בעוד מבדק MOXO הוא מתקדם יותר, מדמה סביבה אמיתית ומאתגר את הנבדק עם מגוון מסיחים קוליים וחזותיים ברמות שונות.</p>
                 <h4 class="font-bold text-zinc-955 dark:text-white mt-3">דרישות הפנייה למבדק MOXO עצמאי:</h4>
-                <p>כדי לבצע מבדק מוקסו עצמאי, המבוטח חייב להציג הפניה מפורשת מ<strong>נוירולוג, פסיכיאטר או רופא קשב מוסמך</strong> בלבד. ההפניה חייבת להיות בתוקף של עד <strong>חצי שנה</strong> מיום הנפקתה ולכלול חתימה וחותמת (או חתימה דיגיטלית של הקופה).</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">כדי לבצע מבדק מוקסו עצמאי, המבוטח חייב להציג הפניה מפורשת מ<strong>נוירולוג, פסיכיאטר או רופא קשב מוסמך</strong> בלבד. ההפניה חייבת להיות בתוקף של עד <strong>חצי שנה</strong> מיום הנפקתה ולכלול חתימה וחותמת (או חתימה דיגיטלית של הקופה).</p>
                 <h4 class="font-bold text-zinc-955 dark:text-white mt-3">הכנה קריטית למבדק מוקסו:</h4>
-                <ul class="list-disc list-inside space-y-1 text-zinc-700 dark:text-zinc-350">
+                <ul class="list-disc list-inside space-y-1 text-zinc-900 dark:text-zinc-100 font-semibold">
                     <li><strong>קפאין:</strong> איסור מוחלט על שתיית קפה, תה, קולה, שוקו, או אכילת שוקולד <strong>לפחות 4 שעות</strong> לפני הבדיקה!</li>
                     <li><strong>צום ואוכל:</strong> אין להגיע בצום! מומלץ לאכול ארוחת בוקר קלה (כריך, חביתה, קורנפלקס).</li>
                     <li><strong>תרופות קשב:</strong> המרכז אינו מספק תרופות. במבדק מלא (לפני ואחרי כדור), המטופל חייב להביא את הכדור שלו איתו מהבית לפי מרשם שקיבל.</li>
@@ -983,16 +1052,16 @@
             title: 'מאל"ו, מת"ל ומבחני לשכה',
             summary: 'מגבלות חוקיות קשיחות של קבילות האבחונים למוסדות אקדמיים ומבחני הסמכה',
             content: `
-                <div class="bg-red-50 dark:bg-red-955/20 p-3 rounded-lg border border-red-200 dark:border-red-900/40 mb-3 text-red-650 dark:text-red-400">
+                <div class="bg-red-50 dark:bg-red-955/20 p-3 rounded-lg border border-red-200 dark:border-red-900/40 mb-3 text-red-650 dark:text-red-400 font-black">
                     <strong>חוק איסור הטעיה רשמי:</strong> מרום אינה קשורה ואינה עובדת עם מאל"ו (המרכז הארצי לבחינות והערכה). חובה להבהיר זאת מראש ללקוח למניעת תביעות!
                 </div>
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">1. מאל"ו (פסיכומטרי, בגרויות ואוניברסיטאות):</h4>
-                <p class="text-zinc-700 dark:text-zinc-350">כל מה שקשור בפסיכומטרי, השלמת בגרויות חיצוניות, מבחני אמירנט או קבלת התאמות במוסדות להשכלה גבוהה (מכללות ואוניברסיטאות) - <strong>האבחונים הפסיכודידקטיים/דידקטיים של מרום אינם קבילים עבורם!</strong></p>
-                <p class="text-zinc-750 dark:text-zinc-200 mt-2 font-bold">מת"ל (מערכת תפקודי למידה): אבחון מת"ל מתבצע אך ורק דרך מרכזי מאל"ו רשמיים. במידה ולקוח פונה ומבקש אבחון מת"ל, אסור להציע לו אבחון פסיכודידקטי כחלופה! יש להפנות אותו ישירות למאל"ו.</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">כל מה שקשור בפסיכומטרי, השלמת בגרויות חיצוניות, מבחני אמירנט או קבלת התאמות במוסדות להשכלה גבוהה (מכללות ואוניברסיטאות) - <strong>האבחונים הפסיכודידקטיים/דידקטיים של מרום אינם קבילים עבורם!</strong></p>
+                <p class="text-zinc-950 dark:text-zinc-100 mt-2 font-black">מת"ל (מערכת תפקודי למידה): אבחון מת"ל מתבצע אך ורק דרך מרכזי מאל"ו רשמיים. במידה ולקוח פונה ומבקש אבחון מת"ל, אסור להציע לו אבחון פסיכודידקטי כחלופה! יש להפנות אותו ישירות למאל"ו.</p>
                 
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">2. מבחני לשכה (עורכי דין, רואי חשבון, סיעוד, רפואה):</h4>
-                <p class="text-zinc-700 dark:text-zinc-350">אבחוני קשב ואבחונים פסיכודידקטיים של מרום <strong>אינם תקפים במבחני לשכה!</strong></p>
-                <p class="text-zinc-755 dark:text-zinc-200 mt-2">אף שעל הנייר נראה שאבחון הקשב של מרום עומד בדרישות הלשכה, בפועל הלשכה דורשת שהאבחון יתבצע באופן בלעדי על ידי <strong>נוירולוג או פסיכיאטר מומחה בלבד</strong> (רופאי קשב וריכוז שאינם נוירולוגים אינם קבילים ע"י הלשכה), ועל הרופא המאבחן למלא באופן אישי שאלון ייעודי מטעם מרכז הבחינות של הלשכה. פניות בנושא זה יש להפנות ישירות למאל"ו ולברר במזכירות המוסד הלימודי.</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">אבחוני קשב ואבחונים פסיכודידקטיים של מרום <strong>אינם תקפים במבחני לשכה!</strong></p>
+                <p class="text-zinc-950 dark:text-zinc-100 mt-2 font-semibold">אף שעל הנייר נראה שאבחון הקשב של מרום עומד בדרישות הלשכה, בפועל הלשכה דורשת שהאבחון יתבצע באופן בלעדי על ידי <strong>נוירולוג או פסיכיאטר מומחה בלבד</strong> (רופאי קשב וריכוז שאינם נוירולוגים אינם קבילים ע"י הלשכה), ועל הרופא המאבחן למלא באופן אישי שאלון ייעודי מטעם מרכז הבחינות של הלשכה. פניות בנושא זה יש להפנות ישירות למאל"ו ולברר במזכירות המוסד הלימודי.</p>
             `
         },
         {
@@ -1001,15 +1070,15 @@
             title: 'קבילות מול ביטוח לאומי',
             summary: 'כללים משפטיים לגבי אי-קבילות אבחוני מרום בוועדות ביטוח לאומי',
             content: `
-                <div class="bg-red-50 dark:bg-red-955/20 p-3 rounded-lg border border-red-200 dark:border-red-900/40 mb-3 text-red-650 dark:text-red-400">
+                <div class="bg-red-50 dark:bg-red-955/20 p-3 rounded-lg border border-red-200 dark:border-red-900/40 mb-3 text-red-650 dark:text-red-400 font-bold">
                     <strong>חוק ביטוח לאומי:</strong> אבחוני רשת מרום אינם קבילים לוועדות לקביעת קצבאות או נכות בביטוח לאומי!
                 </div>
-                <ul class="space-y-3 list-disc list-inside text-zinc-700 dark:text-zinc-300 text-xs">
+                <ul class="space-y-3 list-disc list-inside text-zinc-900 dark:text-zinc-100 text-xs font-black">
                     <li><strong>אבחונים פסיכודידקטיים / דידקטיים:</strong> לא עומדים בדרישות ביטוח לאומי. יש להבהיר זאת מפורשות במהלך השיחת מכירה עם הלקוח.</li>
                     <li><strong>אבחוני קשב וריכוז (רופא קשב):</strong> אינם קבילים בוועדות ביטוח לאומי. דרישת הסף של ביטוח לאומי היא אבחון המבוצע על ידי <strong>נוירולוג או פסיכיאטר בלבד</strong>. חובה להדגיש בפניו שהוא לא יוכל לגשת עם האבחון הנ"ל לוועדות.</li>
                     <li><strong>מבדקי מוקסו (MOXO) עצמאיים:</strong> כל עוד ההפניה המקורית למבדק ניתנה מנוירולוג או פסיכיאטר מחוץ למרום, אין מניעה לבצע אצלנו את המבדק הממוחשב ולגשת איתו לביטוח לאומי.</li>
                     <li><strong>ביצוע אבחון לאחר מבדק חיצוני:</strong> במידה ולקוח מגיע למרום לבצע את אבחון רופא הקשב לאחר שכבר עשה מוקסו במכון אחר, יש להדגיש בפניו כי האבחון לא יהיה קביל בביטוח לאומי.</li>
-                    <li><strong>הנפקת הפניות:</strong> במידה ומטרת הלקוח היא הגשה לביטוח לאומי, הנפקת הפנייה דרכנו לא תהיה קבילה והלקוח יצטרך לפנות לפסיכיאטר או נוירולוג עצמאי.</li>
+                    <li><strong>הנפקת הפניות:</strong> במידה ומטרת הלקוח היא לגשת לביטוח לאומי, הנפקת הפנייה דרכנו לא תהיה קבילה והלקוח יצטרך לפנות לפסיכיאטר או נוירולוג עצמאי.</li>
                 </ul>
             `
         },
@@ -1019,9 +1088,9 @@
             title: 'מחירון מרום רשמי מעודכן',
             summary: 'מחירי השירותים הרשמיים, סבסוד קופות חולים, תעריפי אקספרס והרחבות',
             content: `
-                <div class="space-y-4">
+                <div class="space-y-4 text-zinc-900 dark:text-zinc-100 font-semibold">
                     <h5 class="font-bold text-zinc-950 dark:text-white border-b pb-1">אבחון פסיכודידקטי</h5>
-                    <ul class="list-disc list-inside text-zinc-700 dark:text-zinc-300 text-xs space-y-1">
+                    <ul class="list-disc list-inside text-zinc-900 dark:text-zinc-100 text-xs space-y-1 font-bold">
                         <li>כללית פלטינום: <strong>950 ₪</strong></li>
                         <li>כללית מושלם: <strong>1,420 ₪</strong></li>
                         <li>מכבי שלי: <strong>1,585 ₪</strong></li>
@@ -1030,14 +1099,14 @@
                     </ul>
 
                     <h5 class="font-bold text-zinc-955 dark:text-white border-b pb-1">אבחון דידקטי בלבד</h5>
-                    <ul class="list-disc list-inside text-zinc-700 dark:text-zinc-300 text-xs space-y-1">
+                    <ul class="list-disc list-inside text-zinc-900 dark:text-zinc-100 text-xs space-y-1 font-bold">
                         <li>כללית פלטינום: <strong>550 ₪</strong></li>
                         <li>כללית מושלם: <strong>850 ₪</strong></li>
                         <li>שאר קופות החולים/פרטי: <strong>1,300 ₪</strong></li>
                     </ul>
 
                     <h5 class="font-bold text-zinc-955 dark:text-white border-b pb-1">אבחוני קשב וריכוז (כולל רופא ומבדק)</h5>
-                    <ul class="list-disc list-inside text-zinc-700 dark:text-zinc-300 text-xs space-y-1">
+                    <ul class="list-disc list-inside text-zinc-900 dark:text-zinc-100 text-xs space-y-1 font-bold">
                         <li>כללית פלטינום: <strong>715 ₪</strong></li>
                         <li>כללית מושלם: <strong>800 ₪</strong></li>
                         <li>מכבי: <strong>890 ₪</strong></li>
@@ -1045,14 +1114,14 @@
                     </ul>
 
                     <h5 class="font-bold text-zinc-955 dark:text-white border-b pb-1">מבדקי מוקסו (MOXO עצמאי - ללא רופא)</h5>
-                    <ul class="list-disc list-inside text-zinc-700 dark:text-zinc-300 text-xs space-y-1">
+                    <ul class="list-disc list-inside text-zinc-900 dark:text-zinc-100 text-xs space-y-1 font-bold">
                         <li>כללית פלטינום: חלק 1 - <strong>25 ₪</strong> | 2 חלקים - <strong>50 ₪</strong></li>
                         <li>כללית מושלם: חלק 1 - <strong>110 ₪</strong> | 2 חלקים - <strong>220 ₪</strong></li>
                         <li>לקוח פרטי: חלק 1 - <strong>350 ₪</strong> | 2 חלקים - <strong>490 ₪</strong></li>
                     </ul>
 
                     <h5 class="font-bold text-zinc-955 dark:text-white border-b pb-1">הרחבות למידה פדגוגיות ושירות אקספרס</h5>
-                    <ul class="list-disc list-inside text-zinc-700 dark:text-zinc-300 text-xs space-y-1">
+                    <ul class="list-disc list-inside text-zinc-900 dark:text-zinc-100 text-xs space-y-1 font-bold">
                         <li>הרחבה אחת במתמטיקה או אנגלית: <strong>500 ₪</strong></li>
                         <li>שתי הרחבות יחד: <strong>850 ₪</strong> (חיסכון של 150 ₪)</li>
                         <li>שירות אקספרס קבלת דוח תוך 12 ימי עסקים: <strong>99 ₪</strong></li>
@@ -1067,12 +1136,12 @@
             title: 'הסדרי חברות ביטוח בריאות',
             summary: 'כללים לקליטת התחייבויות פמ"י/ביקורופא ונהלים לחברות ביטוח פרטיות צד ג',
             content: `
-                <p>מרום מקיים הסדרי עבודה ישירים מול חברות ביטוח בריאות שונות:</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">מרום מקיים הסדרי עבודה ישירים מול חברות ביטוח בריאות שונות:</p>
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">1. חוק איסור סבסוד כפול (סעיף קשיח):</h4>
-                <p>לקוח המעוניין להשתמש בביטוח הבריאות הפרטי שלו, <strong>לא יוכל לקבל במקביל גם מחיר מסובסד מטעם קופת החולים שלו!</strong> עליו לבחור באחד מהערוצים.</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">לקוח המעוניין להשתמש בביטוח הבריאות הפרטי שלו, <strong>לא יוכל לקבל במקביל גם מחיר מסובסד מטעם קופת החולים שלו!</strong> עליו לבחור באחד מהערוצים.</p>
                 
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">2. ספקי שירות בהסדר ישיר (פמ"י / ביקורופא):</h4>
-                <ul class="list-disc list-inside space-y-1.5 text-zinc-700 dark:text-zinc-300">
+                <ul class="list-disc list-inside space-y-1.5 text-zinc-900 dark:text-zinc-100 font-bold">
                     <li>אנחנו עובדים עם 2 ספקי שירות ישירים: <strong>ביקורופא (מבטחת הפניקס)</strong> ו-<strong>פמ"י (מבטחת כלל ביטוח)</strong>.</li>
                     <li>לצורך קביעת תור וביצוע התשלום, על המבוטח לפנות לחברת הביטוח שלו <strong>מראש ולהנפיק "כתב התחייבות"</strong>.</li>
                     <li>בכתב ההתחייבות מצוינים סוג השירות המאושר והסכום המדויק של <strong>השתתפות עצמית</strong> אותו אנחנו נגבה מהלקוח בטלפון.</li>
@@ -1081,8 +1150,8 @@
                 </ul>
 
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">3. חברות ביטוח פרטיות צד ג' (הראל / איילון / מגדל וכו'):</h4>
-                <p>מפני שאנחנו לא עובדים עם אותן חברות ביטוח יש אפשרות לקבל אצלנו סבסוד מטעם קופת החולים, לשלם במלואו, ולאחר מכן <strong>להגיש תביעה עצמאית לחברת הביטוח לקבלת החזר נוסף</strong> בהתאם לתנאי הפוליסה של הלקוח.</p>
-                <p>אין צורך בכתב התחייבות, ומרום אינה מייעצת או מתעסקת בתביעות אלו כלל. מומלץ להגיד ללקוח שיבדקו מה דרישות חברת הביטוח להחזר כספי (כמו הפניית רופא קשב/משפחה) למרות שאנחנו לא דורשים זאת לצורך ביצוע האבחון.</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">מפני שאנחנו לא עובדים עם אותן חברות ביטוח יש אפשרות לקבל אצלנו סבסוד מטעם קופת החולים, לשלם במלואו, ולאחר מכן <strong>להגיש תביעה עצמאית לחברת הביטוח לקבלת החזר נוסף</strong> בהתאם לתנאי הפוליסה של הלקוח.</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">אין צורך בכתב התחייבות, ומרום אינה מייעצת או מתעסקת בתביעות אלו כלל. מומלץ להגיד ללקוח שיבדקו מה דרישות חברת הביטוח להחזר כספי (כמו הפניית רופא קשב/משפחה) למרות שאנחנו לא דורשים זאת לצורך ביצוע האבחון.</p>
             `
         },
         {
@@ -1091,21 +1160,21 @@
             title: 'מדיניות ביטולים ודחיות רשמית',
             summary: 'תמחור דחיית תורים, דמי ביטול לפי סוג שירות וחוק הגנת הצרכן',
             content: `
-                <p>מדיניות זו כפופה להוראות חוק הגנת הצרכן ומעודכנת לתאריך <strong>23/12/25</strong>. קביעת התור מותנית בתשלום מלא מראש.</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">מדיניות זו כפופה להוראות חוק הגנת הצרכן ומעודכנת לתאריך <strong>23/12/25</strong>. קביעת התור מותנית בתשלום מלא מראש.</p>
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">1. דחיית תור (Postponement):</h4>
-                <ul class="list-disc list-inside space-y-1 text-zinc-700 dark:text-zinc-350">
+                <ul class="list-disc list-inside space-y-1 text-zinc-900 dark:text-zinc-100 font-bold">
                     <li>דחיית תור ללא עלות: תתאפשר <strong>עד 4 ימי עסקים</strong> לפני מועד התור.</li>
                     <li>דחייה בתוך פחות מ-4 ימי עסקים לפני התור: בעלות של <strong>40 ₪</strong>.</li>
                     <li>דחייה נוספת (מעבר לפעם הראשונה): תתאפשר רק במקרים חריגים בצירוף מסמך רשמי או בעלות של <strong>150 ₪</strong>.</li>
                     <li>דחייה ביום התור עצמו: בעלות של <strong>150 ₪</strong>.</li>
                 </ul>
-                <p class="text-xs text-zinc-500 mt-1">אופן ההודעה: אך ורק בשיחת טלפון או ווטסאפ לנציגות השירות. אין אפשרות לבטל או לדחות תור באמצעות דוא"ל!</p>
+                <p class="text-xs text-zinc-600 dark:text-zinc-300 font-black mt-1">אופן ההודעה: אך ורק בשיחת טלפון או ווטסאפ לנציגות השירות. אין אפשרות לבטל או לדחות תור באמצעות דוא"ל!</p>
 
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">2. דמי ביטול עסקה (עד 14 ימי עסקים מהרכישה):</h4>
-                <p>החזר כספי בניכוי של 5% מערך העסקה או 100 ₪ (הנמוך מביניהם).</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">החזר כספי בניכוי של 5% מערך העסקה או 100 ₪ (הנמוך מביניהם).</p>
 
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">3. דמי ביטול החל מהיום ה-15 ו/או מעל 2 ימי עסקים לפני התור:</h4>
-                <ul class="list-disc list-inside text-xs text-zinc-700 dark:text-zinc-350 space-y-1">
+                <ul class="list-disc list-inside text-xs text-zinc-900 dark:text-zinc-100 space-y-1 font-black">
                     <li>אבחון פסיכודידקטי: <strong>250 ₪</strong></li>
                     <li>אבחון קשב (רופא): כללית פלטינום: <strong>175 ₪</strong> | כללית מושלם: <strong>200 ₪</strong> | מכבי: <strong>220 ₪</strong> | פרטי: <strong>265 ₪</strong></li>
                     <li>שיחת מעקב עם רופא / הפניה למוקסו (שיחה): <strong>25%</strong> מערך העסקה.</li>
@@ -1113,7 +1182,7 @@
                 </ul>
 
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">4. דמי ביטול בתוך פחות מ-2 ימי עסקים לפני מועד התור:</h4>
-                <ul class="list-disc list-inside text-xs text-zinc-700 dark:text-zinc-350 space-y-1">
+                <ul class="list-disc list-inside text-xs text-zinc-900 dark:text-zinc-100 space-y-1 font-black">
                     <li>אבחון פסיכודידקטי: <strong>500 ₪</strong></li>
                     <li>אבחון קשב (רופא): כללית פלטינום: <strong>285 ₪</strong> | כללית מושלם: <strong>320 ₪</strong> | מכבי: <strong>350 ₪</strong> | פרטי: <strong>430 ₪</strong></li>
                     <li>שיחת מעקב עם רופא / הפניה למוקסו (שיחה): <strong>40%</strong> מערך העסקה.</li>
@@ -1128,18 +1197,18 @@
             title: 'שירות סיכום אקספרס',
             summary: 'שני מסלולי תמחור וזירוז, ניהול מכסות מלאי והבטחת SLA',
             content: `
-                <p>שירות "מרום אקספרס" מעניק ללקוחות גמישות ומענה מהיר לקבלת דוחות האבחון במקום המתנה של כ-30 יום כמקובל בשוק.</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">שירות "מרום אקספרס" מעניק ללקוחות גמישות ומענה מהיר לקבלת דוחות האבחון במקום המתנה של כ-30 יום כמקובל בשוק.</p>
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">1. מסלולי השירות ועלויות:</h4>
-                <ul class="list-disc list-inside text-zinc-700 dark:text-zinc-350 space-y-1 text-xs">
+                <ul class="list-disc list-inside text-zinc-900 dark:text-zinc-100 space-y-1 text-xs font-bold">
                     <li><strong>סיכום אקספרס (רגיל):</strong> אספקה תוך <strong>12 ימי עסקים</strong> מיום ביצוע האבחון. עלות: <strong>99 ₪</strong>.</li>
                     <li><strong>סיכום אקספרס+ (דחוף):</strong> אספקה תוך <strong>4 ימי עסקים</strong> מיום ביצוע האבחון. מיועד למקרי דחף קיצוניים כגון ועדות שילוב קרובות. עלות: <strong>199 ₪</strong>.</li>
                 </ul>
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">2. התחייבות SLA קשיחה:</h4>
-                <p>במידה והדוח חורג מזמני ההתחייבות (SLA), <strong>הלקוח יקבל זיכוי כספי מלא ומיידי על עלות האקספרס ששילם!</strong></p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">במידה והדוח חורג מזמני ההתחייבות (SLA), <strong>הלקוח יקבל זיכוי כספי מלא ומיידי על עלות האקספרס ששילם!</strong></p>
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">3. ניהול מלאי ומכסות חודשיות (חובה על הנציג):</h4>
-                <p>כדי לשמור על בקרת איכות ולמנוע עומס על הפסיכולוגים, אנו מנהלים "מלאי" זמין במערכת הניהול הייעודית של מרום. לכל פסיכולוג מוגדרות שתי מכסות חודשיות נפרדות (מכסת אקספרס ומכסת אקספרס דחופה).</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">כדי לשמור על בקרת איכות ולמנוע עומס על הפסיכולוגים, אנו מנהלים "מלאי" זמין במערכת הניהול הייעודית של מרום. לכל פסיכולוג מוגדרות שתי מכסות חודשיות נפרדות (מכסת אקספרס ומכסת אקספרס דחופה).</p>
                 <p class="font-bold text-amber-600 dark:text-brand-accent mt-1">לפני ביצוע המכירה: נציג המכירות חייב לוודא במערכת כי קיים מלאי פנוי אצל הפסיכולוג המאבחן במסלול הרצוי!</p>
-                <p class="text-xs text-zinc-550">במקרים חריגים בהם המלאי אזל והלקוח מתעקש, יש לפנות למנהלת התחום. המנהלת תבדוק מול הפסיכולוג האם ניתן לאשר חריגה נקודתית ("אובר-בוקינג") ותפתח את המלאי ידנית.</p>
+                <p class="text-xs text-zinc-900 dark:text-zinc-100 font-semibold">במקרים חריגים בהם המלאי אזל והלקוח מתעקש, יש לפנות למנהלת התחום. המנהלת תבדוק מול הפסיכולוג האם ניתן לאשר חריגה נקודתית ("אובר-בוקינג") ותפתח את המלאי ידנית.</p>
             `
         },
         {
@@ -1148,9 +1217,9 @@
             title: 'צ\'קליסט פתיחה וסגירת משמרת',
             summary: 'משימות חובה יומיות לשמירה על רצף תפעולי ומניעת אובדן לידים במרום',
             content: `
-                <p>המשמרת נועדה לייצר מוכנות מלאה לעבודה תפעולית ומקצועית ומניעת אובדן מידע רפואי.</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">המשמרת נועדה לייצר מוכנות מלאה לעבודה תפעולית ומקצועית ומניעת אובדן מידע רפואי.</p>
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">1. צ'קליסט פתיחת משמרת:</h4>
-                <ul class="list-decimal list-inside space-y-1.5 text-xs text-zinc-700 dark:text-zinc-350">
+                <ul class="list-decimal list-inside space-y-1.5 text-xs text-zinc-900 dark:text-zinc-100 font-bold">
                     <li><strong>חיבור מערכות:</strong> חיבור למחשב, CRM Rapid, טלפוניה וווטסאפ עסקי.</li>
                     <li><strong>טיפול בלידים חדשים (עדיפות א'):</strong> מעבר מיידי על לידים חדשים שנכנסו במהלך הלילה או הבוקר.</li>
                     <li><strong>לידים בתהליך:</strong> בדיקת סטטוסים, חזרה ללידים שממתינים למענה, ומעקב לקוחות מתלבטים או שלא ענו.</li>
@@ -1159,11 +1228,11 @@
                     <li><strong>שיחות ותיעוד:</strong> מוכנות סביבת עבודה, התחלת שיחות ותיעוד שוטף ב-CRM.</li>
                 </ul>
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">2. צ'קליסט סגירת משמרת (הבטחת רציפות טיפול):</h4>
-                <ul class="list-decimal list-inside space-y-1.5 text-xs text-zinc-700 dark:text-zinc-350">
+                <ul class="list-decimal list-inside space-y-1.5 text-xs text-zinc-900 dark:text-zinc-100 font-bold">
                     <li><strong>תיעוד מלא:</strong> וידוא כי לכל שיחה וליד שטופל קיים תיעוד מפורט וסטטוס ברור ב-CRM (אין להשאיר לידים ללא סטטוס!).</li>
                     <li><strong>משימות המשך (פולו-אפ):</strong> הגדרת תזכורות ברורות עם תאריך ושעה ללקוחות מתלבטים.</li>
                     <li><strong>בדיקת תורים:</strong> וידוא תקינות תיאום תורים, חלוקת תשלומים ב-Rapid, ושליחת דרישת שאלונים.</li>
-                    <li><strong>מענה ערוצים:</strong> מענה לכלל הפניות בווטסאפ ובמייל.</li>
+                    <li><strong>מענה ערוצים:</strong> מענה לפניות פתוחות בווטסאפ ובמייל.</li>
                     <li><strong>דיווח חריגים:</strong> עדכון מנהלת התחום מרגרט או מנהלי משמרת על בעיות מיוחדות.</li>
                 </ul>
             `
@@ -1174,21 +1243,21 @@
             title: 'צ\'קליסט Rapid ועבודה שוטפת',
             summary: 'מדריך עבודה קריטי לניהול צ\'קליסטים, לוחות זמנים ומשימות אדמיניסטרטיביות',
             content: `
-                <p>הצ'קליסט ב-Rapid הוא כלי העבודה המרכזי של צוות המשרד להבטחת 100% מוכנות ותיאום ציפיות מול לקוחות מרום.</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">הצ'קליסט ב-Rapid הוא ככלי העבודה המרכזי של צוות המשרד להבטחת 100% מוכנות ותיאום ציפיות מול לקוחות מרום.</p>
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">1. שלב הייזום (באחריות צוות המכירות - חובה!):</h4>
-                <p>פתיחת הצ'קליסט היא חלק בלתי נפרד מנוהל תיאום התור. <strong>יש לפתוח ולשייך את הצ'קליסט מיד לאחר קביעת התור ביומן ל:</strong> אבחון קשב וריכוז (יש לבחור את הוריאציה המתאימה: כללית / ילדים / מבוגרים וכו'), אבחון פסיכודידקטי, או מבדק MOXO עצמאי.</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">פתיחת הצ'קליסט היא חלק בלתי נפרד מנוהל תיאום התור. <strong>יש לפתוח ולשייך את הצ'קליסט מיד לאחר קביעת התור ביומן ל:</strong> אבחון קשב וריכוז (יש לבחור את הוריאציה המתאימה: כללית / ילדים / מבוגרים וכו'), אבחון פסיכודידקטי, או מבדק MOXO עצמאי.</p>
                 <p class="text-xs text-red-500 font-bold mt-1">⚠️ שים לב: ללא שיוך הצ'קליסט, התיק לא ייפתח לאדמיניסטרציה, ומשימות קריטיות לא יבוצעו בזמן!</p>
                 
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">2. לוחות זמנים חכמים (Due Dates):</h4>
-                <p>הצ'קליסט מחשב זמנים אוטומטית לאחור מתאריך הפגישה שנקבע ביומן:</p>
-                <ul class="list-disc list-inside text-xs text-zinc-700 dark:text-zinc-350 space-y-1">
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">הצ'קליסט מחשב זמנים אוטומטית לאחור מתאריך הפגישה שנקבע ביומן:</p>
+                <ul class="list-disc list-inside text-xs text-zinc-900 dark:text-zinc-100 space-y-1 font-bold">
                     <li><strong>שאלון הורים ומורים:</strong> דד-ליין של 7 ימים לפני מועד הפגישה (כדי להבטיח קבלת חומרים מראש).</li>
                     <li><strong>תורים דחופים (פחות מ-3 ימים מראש):</strong> המערכת מזהה זאת אוטומטית וקובעת את יעד המשימה ל-<strong>"היום!"</strong> באופן מיידי.</li>
                     <li><strong>שינוי פגישות:</strong> שים לב כי אם הפגישה זזה ביומן, משימות הצ'קליסט לא מתעדכנות בהתאם ויש לבצע עדכון ידני!</li>
                 </ul>
 
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">3. טיפול בלקוחות נשואים לעומת גרושים:</h4>
-                <p>במידה וההורים נשואים ואין חובת חתימה כפולה, יש להיכנס לפריטי הצ'קליסט ב-Rapid, ללחוץ על ה-3 נקודות ליד סעיף "חתימת הורים גרושים" ולמחוק אותו ידנית מהרשימה, על מנת להביא את הצ'קליסט של הלקוח ל-100% מוכנות והשלמה ביום האבחון.</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-bold">במידה וההורים נשואים ואין חובת חתימה כפולה, יש להיכנס לפריטי הצ'קליסט ב-Rapid, ללחוץ על ה-3 נקודות ליד סעיף "חתימת הורים גרושים" ולמחוק אותו ידנית מהרשימה, על מנת להביא את הצ'קליסט של הלקוח ל-100% מוכנות והשלמה ביום האבחון.</p>
             `
         },
         {
@@ -1197,11 +1266,11 @@
             title: 'שיחות מעקב והנפקת הפניות',
             summary: 'נהלים וצ\'קליסט לשירותי מעקב רפואי והנפקת הפניות למבדקי מוקסו',
             content: `
-                <p>מדריך הכשרה לשירותי המשך רפואיים לאחר ביצוע האבחון או כאשר המטופל פונה למבדק ממוחשב חיצוני:</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-bold">מדריך הכשרה לשירותי המשך רפואיים לאחר ביצוע האבחון או כאשר המטופל פונה למבדק ממוחשב חיצוני:</p>
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">1. שירותי מעקב לאחר אבחון:</h4>
-                <p><strong>למה צריך?</strong> כדי לוודא שהטיפול התרופתי שניתן ע"י רופא הקשב עובד, שאין תופעות לוואי קשות ולדייק את מינוני התרופות (קונסרטה, ריטלין וכו\').</p>
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold"><strong>למה צריך?</strong> כדי לוודא שהטיפול התרופתי שניתן ע"י רופא הקשב עובד, שאין תופעות לוואי קשות ולדייק את מינוני התרופות (קונסרטה, ריטלין וכו\').</p>
                 <p class="font-bold text-brand-cyan">תנאי סף: ניתן לקבוע רק למי שכבר מאובחן רשמית (עבר אבחון רופא מלא, ולא רק ביצע מבדק מוקסו!).</p>
-                <ul class="list-disc list-inside text-xs text-zinc-750 dark:text-zinc-300 space-y-1 mt-1">
+                <ul class="list-disc list-inside text-xs text-zinc-900 dark:text-zinc-100 space-y-1.5 mt-1 font-bold font-sans">
                     <li><strong>עלות ללקוח שלנו (ביצע אצלנו אבחון בעבר):</strong> <strong>350 ₪</strong>.</li>
                     <li><strong>עלות ללקוח חיצוני (לא אובחן במרום):</strong> <strong>400 ₪</strong>.</li>
                     <li><strong>דגש חובה ללקוח חיצוני:</strong> חובה לקבל את מסמך האבחון המקורי שלו מראש במייל/ווטסאפ ולוודא שהוא אכן מאובחן תקין לפני קביעת התור!</li>
@@ -1209,8 +1278,8 @@
                 </ul>
 
                 <h4 class="font-bold text-zinc-950 dark:text-white mt-3">2. הנפקת הפנייה למבדק מוקסו (MOXO):</h4>
-                <p>מיועד ללקוח שרוצה לבצע מבדק מוקסו חיצוני או לנצל זכאות בקופה (למשל כללית) אך אין לו הפניה חתומה מנוירולוג/פסיכיאטר/רופא קשב מוסמך.</p>
-                <ul class="list-disc list-inside text-xs text-zinc-750 dark:text-zinc-300 space-y-1">
+                <p class="text-zinc-900 dark:text-zinc-100 font-semibold">מיועד ללקוח שרוצה לבצע מבדק מוקסו חיצוני או לנצל זכאות בקופה (למשל כללית) אך אין לו הפניה חתומה מנוירולוג/פסיכיאטר/רופא קשב מוסמך.</p>
+                <ul class="list-disc list-inside text-xs text-zinc-900 dark:text-zinc-100 space-y-1 font-bold font-sans">
                     <li><strong>עלות:</strong> <strong>150 ₪</strong>.</li>
                     <li><strong>תהליך ותיאום ציפיות:</strong> תור טלפוני קצר של 10 דקות מול רופא מרום לקבלת ההפניה החתומה.</li>
                 </ul>
@@ -1443,7 +1512,7 @@
                 <p class="font-bold text-emerald-600 dark:text-brand-teal">📞 תסריט שיחה - אבחון פסיכודידקטי:</p>
                 <p><strong>נציג:</strong> "שלום, מדבר/ת... מפורטל maROM, ראיתי שפנית אלינו לגבי אבחון פסיכודידקטי, איך אפשר לעזור?"</p>
                 <p><strong>נציג:</strong> "מה גיל הנבדק/ת ולאיזה צורך אתם שוקלים לעשות את האבחון? האם קשה לו בלימודים או שיש פערים?" (להקשיב היטב ללקוח, אל תקטע!).</p>
-                <p><strong>נציג:</strong> "אני מבינה... זה באמת קושי שכיח, וברוב המקרים אבחון כזה מאוד עוזר לעשות סדר. האבחון מורכב משני חלקים: החלק הדידקטי שבודק יכולות קריאה, כתיבה, חשבון, זיכרון ו-IQ, והחלק הפסיכולוגי שבוחן את המצב הרגשי והקוגניטיבי שעשוי להשפיע על הלמידה. הכל נעשה במפגש אחד של כשעתיים וחצי ע"י פסיכולוג חינוכי מוסמך, ובסוף מקבלים דוח מפורט המקנה התאמות רמה 1, 2 ו-3 בבגרויות."</p>
+                <p><strong>נציג:</strong> "אני מבינה... זה באמת קושי שכיח, וברוב המקרים אבחון כזה מאוד עוזר לעשות סדר ולהבין מאיפה מתחילים. האבחון מורכב משני חלקים: החלק הדידקטי שבודק יכולות קריאה, כתיבה, חשבון, זיכרון ו-IQ, והחלק הפסיכולוגי שבוחן את המצב הרגשי והקוגניטיבי שעשוי להשפיע על הלמידה. הכל נעשה במפגש אחד של כשעתיים וחצי ע"י פסיכולוג חינוכי מוסמך, ובסוף מקבלים דוח מפורט המקנה התאמות רמה 1, 2 ו-3 בבגרויות."</p>
                 <p><strong>נציג (הרחבות):</strong> "אם יש קושי גם באנגלית או מתמטיקה, כן חשוב לדעת שללא הרחבות לא יינתנו הקלות במקצועות האלה. מומלץ להוסיף את ההרחבות כחלק מהאבחון כדי להבטיח מענה שלם."</p>
                 <p><strong>נציג (סגירה):</strong> "אז בואי נתקדם ונמצא לכם תור שמתאים כדי שלא נישאר עם סימני שאלה והפער בלימודים יגדל."</p>
             `;
@@ -1505,7 +1574,7 @@
                 break;
             case 'moxo-only':
                 purpose = `ביצוע מבדק קשב ממוחשב אובייקטיבי המשלב מסיחים קוליים וחזותיים על מנת למדוד 4 מדדים: קשב, תזמון, אימפולסיביות והיפראקטיביות.`;
-                recognition = `המדדים משמשים ככלי עזר בלבד. התוצאות מועברות חזרה לרופא המפנה לצורך סיוע בקביעת אבחנה (הבדיקה בפני עצמה אינה מהווה אבחנה רפואית ללא פגישה עם רופא). קביל לביטוח לאומי אך ורק אם ההפניה המקורית ניתנה מנוירולוג או פסיכיאטר מומחה!`;
+                recognition = `המדדים משמשים ככלי עזר בלבד. התוצאות מועברות חזרה לרופא המפנה לצורך סיוע בקביעת אבחנה (הבדיקה בפני עצמה אינה מהווה אבחנה רפואית ללא פגישה WITH רופא). קביל לביטוח לאומי אך ורק אם ההפניה המקורית ניתנה מנוירולוג או פסיכיאטר מומחה!`;
                 disclaimer = `ביצוע מבדק MOXO ממוחשב ככלי עזר בלבד עבור רופאים חיצוניים. מובהר ללקוח כי תוצאות המבדק אינן מהוות אבחנה רפואית רשמית ללא ראיון קליני של רופא מוסמך. הבדיקה קבילה לביטוח לאומי אך ורק אם ישנה הפניה מנוירולוג/פסיכיאטר.`;
                 break;
             case 'follow-up':
@@ -1958,34 +2027,44 @@ ${freeNotes}
         postponeSpan.innerText = postponeFee;
     }
 
-    // Right Sidebar Tab Switches
+    // Right Sidebar Tab Switches (Successfully supports 4 interactive tabs)
     function switchRightTab(tabName) {
         const btnCopilot = document.getElementById('tab-btn-copilot');
         const btnChecklist = document.getElementById('tab-btn-checklist');
         const btnRapid = document.getElementById('tab-btn-rapid');
+        const btnObjections = document.getElementById('tab-btn-objections');
         
         const contentCopilot = document.getElementById('tab-content-copilot');
         const contentChecklist = document.getElementById('tab-content-checklist');
         const contentRapid = document.getElementById('tab-content-rapid');
+        const contentObjections = document.getElementById('tab-content-objections');
 
         // Reset
-        btnCopilot.className = "flex-1 py-2.5 text-xs font-bold text-center text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850 transition border-b-2 border-transparent";
-        btnChecklist.className = "flex-1 py-2.5 text-xs font-bold text-center text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850 transition border-b-2 border-transparent";
-        btnRapid.className = "flex-1 py-2.5 text-xs font-bold text-center text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850 transition border-b-2 border-transparent";
+        const inactiveBtnClass = "flex-1 py-2.5 text-[11px] font-bold text-center text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850 transition border-b-2 border-transparent whitespace-nowrap";
+        btnCopilot.className = inactiveBtnClass;
+        btnChecklist.className = inactiveBtnClass;
+        btnRapid.className = inactiveBtnClass;
+        btnObjections.className = inactiveBtnClass;
         
         contentCopilot.classList.add('hidden');
         contentChecklist.classList.add('hidden');
         contentRapid.classList.add('hidden');
+        contentObjections.classList.add('hidden');
+
+        const activeBtnClass = "flex-1 py-2.5 text-[11px] font-bold text-center border-b-2 border-brand-cyan bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white transition whitespace-nowrap shadow-sm";
 
         if (tabName === 'copilot') {
             contentCopilot.classList.remove('hidden');
-            btnCopilot.className = "flex-1 py-2.5 text-xs font-bold text-center border-b-2 border-brand-cyan bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white transition";
+            btnCopilot.className = activeBtnClass;
         } else if (tabName === 'checklist') {
             contentChecklist.classList.remove('hidden');
-            btnChecklist.className = "flex-1 py-2.5 text-xs font-bold text-center border-b-2 border-brand-teal bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white transition";
-        } else {
+            btnChecklist.className = "flex-1 py-2.5 text-[11px] font-bold text-center border-b-2 border-brand-teal bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white transition whitespace-nowrap shadow-sm";
+        } else if (tabName === 'rapid') {
             contentRapid.classList.remove('hidden');
-            btnRapid.className = "flex-1 py-2.5 text-xs font-bold text-center border-b-2 border-brand-cyan bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white transition";
+            btnRapid.className = activeBtnClass;
+        } else if (tabName === 'objections') {
+            contentObjections.classList.remove('hidden');
+            btnObjections.className = "flex-1 py-2.5 text-[11px] font-bold text-center border-b-2 border-brand-danger bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white transition whitespace-nowrap shadow-sm";
         }
     }
 
@@ -2095,9 +2174,10 @@ ${freeNotes}
 
         const chatHistory = document.getElementById('ai-chat-history');
         
+        // Fixed User message design inside AI history window (Force clean black/white text)
         const userDiv = document.createElement('div');
-        userDiv.className = "bg-zinc-100 dark:bg-zinc-900/60 p-2 rounded-lg text-xs leading-relaxed text-right border border-zinc-200 dark:border-zinc-850";
-        userDiv.innerHTML = `<span class="text-brand-teal font-bold block mb-1">אתה:</span> ${queryText}`;
+        userDiv.className = "bg-zinc-100 dark:bg-zinc-900/60 p-2 rounded-lg text-xs leading-relaxed text-right border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100 font-semibold";
+        userDiv.innerHTML = `<span class="text-brand-teal font-black block mb-1">אתה:</span> ${queryText}`;
         chatHistory.appendChild(userDiv);
         chatHistory.scrollTop = chatHistory.scrollHeight;
 
@@ -2118,53 +2198,61 @@ ${freeNotes}
         ${JSON.stringify(wikiData)}
         `;
 
-        const maxRetries = 5;
-        let attempt = 0;
+        // Robust Trial Flow: fallback dynamic model trial list to resolve HTTP 404
+        const modelsToTry = [
+            GEMINI_MODEL, // Configured model e.g. "gemini-2.5-flash-preview-09-2025"
+            "gemini-2.5-flash", // Next-gen stable fallback
+            "gemini-1.5-flash", // Standard production fallback
+            "gemini-flash-latest" // User's custom verified model
+        ];
+
         let success = false;
         let responseData = null;
-        let modelInUse = GEMINI_MODEL;
+        let finalModelUsed = modelsToTry[0];
 
-        while (attempt < maxRetries && !success) {
-            try {
-                // Constructing request endpoint
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelInUse}:generateContent?key=${GEMINI_API_KEY}`;
-                
-                const payload = {
-                    contents: [{ parts: [{ text: queryText }] }],
-                    systemInstruction: {
-                        parts: [{ text: systemPrompt }]
+        for (let m = 0; m < modelsToTry.length; m++) {
+            if (success) break;
+            const activeModel = modelsToTry[m];
+            finalModelUsed = activeModel;
+            const maxRetries = 3;
+            let attempt = 0;
+
+            while (attempt < maxRetries && !success) {
+                try {
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${activeModel}:generateContent?key=${GEMINI_API_KEY}`;
+                    
+                    const payload = {
+                        contents: [{ parts: [{ text: queryText }] }],
+                        systemInstruction: {
+                            parts: [{ text: systemPrompt }]
+                        }
+                    };
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (response.status === 404) {
+                        // Switch immediately to next model in the outer loop
+                        break;
                     }
-                };
 
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (response.status === 404) {
-                    // Try switching to the stable flash fallback to fix the 404 issue
-                    if (modelInUse !== "gemini-2.5-flash") {
-                        modelInUse = "gemini-2.5-flash";
-                        document.getElementById('ai-model-select').value = "gemini-2.5-flash";
-                        continue; // retry immediately with the stable fallback model
+                    if (!response.ok) {
+                        throw new Error(`HTTP Error Status: ${response.status}`);
                     }
-                    throw new Error("HTTP 404 Model Not Found");
-                }
 
-                if (!response.ok) {
-                    throw new Error(`HTTP Error Status: ${response.status}`);
-                }
-
-                responseData = await response.json();
-                success = true;
-            } catch (err) {
-                attempt++;
-                const delay = Math.pow(2, attempt) * 1000; // Exponential Backoff
-                if (attempt >= maxRetries) {
-                    console.error("Gemini Copilot maximum API retries reached:", err);
-                } else {
-                    await new Promise(resolve => setTimeout(resolve, delay));
+                    responseData = await response.json();
+                    success = true;
+                } catch (err) {
+                    attempt++;
+                    const delay = Math.pow(2, attempt) * 1000;
+                    if (attempt >= maxRetries) {
+                        console.error(`Gemini Copilot model ${activeModel} trial failed:`, err);
+                    } else {
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                    }
                 }
             }
         }
@@ -2173,13 +2261,16 @@ ${freeNotes}
         if (loader) loader.remove();
 
         const aiDiv = document.createElement('div');
-        aiDiv.className = "bg-zinc-50 dark:bg-zinc-900 p-2 rounded-lg text-xs leading-relaxed text-zinc-850 dark:text-zinc-300 border border-zinc-205 dark:border-zinc-850 animate-fade-in";
+        aiDiv.className = "bg-zinc-50 dark:bg-zinc-900 p-2 rounded-lg text-xs leading-relaxed text-zinc-900 dark:text-zinc-150 border border-zinc-200 dark:border-zinc-800 animate-fade-in";
 
         if (success && responseData?.candidates?.[0]?.content?.parts?.[0]?.text) {
             const aiText = responseData.candidates[0].content.parts[0].text;
             aiDiv.innerHTML = `<span class="text-brand-cyan font-bold block mb-1">קופילוט מרום:</span> ${aiText.replace(/\n/g, '<br>')}`;
+            // Sync settings UI just in case model changed
+            document.getElementById('ai-model-select').value = finalModelUsed;
+            GEMINI_MODEL = finalModelUsed;
         } else {
-            aiDiv.innerHTML = `<span class="text-brand-danger font-bold block mb-1">שגיאת חיבור (404/API Error):</span> המערכת נכשלה בהתקשרות ל-Gemini API. אנא וודא כי ה-API Key תקין תחת גלגל השיניים, או בחר מודל חלופי יציב (gemini-2.5-flash).`;
+            aiDiv.innerHTML = `<span class="text-brand-danger font-bold block mb-1">שגיאת חיבור (API Error):</span> המערכת נכשלה בהתקשרות ל-Gemini API (ניסינו מודלים חלופיים כולל gemini-flash-latest). אנא וודא כי ה-API Key תקין תחת גלגל השיניים.`;
         }
 
         chatHistory.appendChild(aiDiv);
