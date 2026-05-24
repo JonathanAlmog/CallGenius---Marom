@@ -148,25 +148,50 @@
                 
                 <!-- STEP 1: Inquirer and Insurance Details -->
                 <div id="wizard-step-1" class="wizard-step space-y-6">
+
+                    <!-- Eligibility reminder banner -->
+                    <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-300 dark:border-amber-700 rounded-2xl p-4 flex items-start gap-3">
+                        <span class="text-amber-500 text-lg mt-0.5">⚠️</span>
+                        <p class="text-xs font-bold text-amber-800 dark:text-amber-300">לפני שיחה עם לקוח כללית — חובה לבדוק זכאות במערכת כללית מושלם לפני תחילת השיחה!</p>
+                    </div>
+
                     <div class="bg-white dark:bg-brand-darkCard border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 shadow-sm theme-transition">
                         <h3 class="text-lg font-bold text-zinc-900 dark:text-white mb-4 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-3">
                             <span class="bg-brand-cyan/20 text-brand-cyan p-2 rounded-lg text-sm"><i class="fa-solid fa-user-injured text-base"></i></span>
                             שלב 1: פרטי המאובחן
                         </h3>
                         
-                        <!-- Inputs Grid - ONLY PATIENT INFO -->
+                        <!-- Inputs Grid -->
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div>
-                                <label class="block text-xs font-bold text-zinc-600 dark:text-zinc-300 mb-1">שם המאובחן/ת <span class="text-brand-danger">*</span></label>
+                                <label class="block text-xs font-bold text-zinc-600 dark:text-zinc-300 mb-1">שם המאובחן/ת</label>
                                 <input type="text" id="child-name" oninput="updateAllOutputs();" placeholder="שם מלא" class="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-zinc-900 dark:text-white focus:outline-none focus:border-brand-cyan transition">
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-zinc-600 dark:text-zinc-300 mb-1">גיל המאובחן/ת <span class="text-brand-danger">*</span></label>
-                                <input type="number" id="child-age" placeholder="גיל בשנים" class="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-zinc-900 dark:text-white focus:outline-none focus:border-brand-cyan transition">
+                                <label class="block text-xs font-bold text-zinc-600 dark:text-zinc-300 mb-1">שנת לידה</label>
+                                <div class="flex gap-2 items-center">
+                                    <input type="number" id="birth-year" oninput="calcAge();" placeholder="למשל 2015" min="1950" max="2025" class="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-zinc-900 dark:text-white focus:outline-none focus:border-brand-cyan transition">
+                                    <span id="age-result" class="text-xs font-black text-brand-cyan whitespace-nowrap"></span>
+                                </div>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-zinc-600 dark:text-zinc-300 mb-1">ת.ז. המאובחן/ת <span class="text-brand-danger">*</span></label>
-                                <input type="text" id="child-id" oninput="updateAllOutputs();" placeholder="9 ספרות" class="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-zinc-900 dark:text-white text-left focus:outline-none focus:border-brand-cyan transition">
+                                <label class="block text-xs font-bold text-zinc-600 dark:text-zinc-300 mb-1">כיתה (אם רלוונטי)</label>
+                                <select id="child-grade" class="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-zinc-900 dark:text-white focus:outline-none focus:border-brand-cyan transition">
+                                    <option value="">-- לא רלוונטי --</option>
+                                    <option value="א">א'</option>
+                                    <option value="ב">ב'</option>
+                                    <option value="ג">ג'</option>
+                                    <option value="ד">ד'</option>
+                                    <option value="ה">ה'</option>
+                                    <option value="ו">ו'</option>
+                                    <option value="ז">ז'</option>
+                                    <option value="ח">ח'</option>
+                                    <option value="ט">ט'</option>
+                                    <option value="י">י'</option>
+                                    <option value="יא">י"א</option>
+                                    <option value="יב">י"ב</option>
+                                    <option value="מבוגר">מבוגר</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -439,6 +464,17 @@
                                     <input type="text" id="commitment-number" oninput="updateAllOutputs();" placeholder="הכנס מספר התחייבות (אם יש)" class="w-full bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-lg p-2 text-xs text-zinc-900 dark:text-white focus:outline-none focus:border-brand-cyan text-left">
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- Closing Reminders -->
+                        <div class="bg-brand-cyan/5 border border-brand-cyan/30 rounded-xl p-4 space-y-3">
+                            <span class="font-bold text-brand-cyan text-xs flex items-center gap-2"><i class="fa-solid fa-list-check"></i> תזכורות סגירה — חובה לפני סיום השיחה</span>
+                            <ul class="space-y-2 text-xs text-zinc-800 dark:text-zinc-200">
+                                <li class="flex items-start gap-2"><span class="text-brand-cyan mt-0.5">📎</span><span><strong>העלאת מסמכים לכרטיס הלקוח (אם יש):</strong> כרטיס מכבי שלי, התחייבות מחברת ביטוח</span></li>
+                                <li class="flex items-start gap-2"><span class="text-brand-cyan mt-0.5">📋</span><span><strong>שליחת שאלונים</strong> בהתאם לסוג האבחון — פסיכודידקטי: שאלון הורים | קשב: שאלון הורים + שאלון מורה | לוודא מצב הורים (גרושים: שאלון לכל הורה + טפסי הסכמה)</span></li>
+                                <li class="flex items-start gap-2"><span class="text-brand-cyan mt-0.5">✅</span><span><strong>יצירת צ'קליסט ב-RAPID</strong> לפגישה מיד לאחר קביעת התור</span></li>
+                                <li class="flex items-start gap-2"><span class="text-brand-cyan mt-0.5">⭐</span><span><strong>הוספת ת.ז. הלקוח לרשימת הבונוסים</strong> כולל פירוט ההרחבות שנרכשו</span></li>
+                            </ul>
                         </div>
 
                         <!-- Generator for Appointment Note -->
@@ -1383,7 +1419,7 @@
         if (diagName === 'adhd-doctor' && isMaccabiClalit) {
             note = "🚨 RAPID (קשב): חובה לקבוע תחילה תור ל-MOXO ביומן, ולאחר מכן לקבוע באותה השעה בדיוק תור לאבחון קשב וריכוז (רופא).";
         } else if (diagName === 'psychodidactic' && isMaccabiClalit) {
-            note = "🚨 RAPID (פסיכודידקטי): חובה לקבוע תור נפרד לכל סוג שירות בפני עצמו במערכת (תור פסיכודידקטי, תור להרחבות, תור לאקספרס וכו').";
+            note = "🚨 RAPID (פסיכודידקטי + כללית בלבד): חובה לקבוע תור נפרד לכל סוג שירות בפני עצמו במערכת (תור פסיכודידקטי, תור להרחבות, תור לאקספרס וכו'). עם קופות אחרות אין צורך בפיצול.";
         } else if (diagName === 'moxo-only') {
             note = "🚨 RAPID (מוקסו בלבד): חובה לרשום בהערות התור שהמבדק נקבע 'ללא פיענוח מקצועי' (הלקוח מביא הפניה מבחוץ).";
         } else {
@@ -1787,13 +1823,6 @@
 
         let summaryParts = [];
         summaryParts.push(`תאריך שיחה: ${todayDate}`);
-        
-        if (cName || cId) {
-            let patientInfo = '';
-            if (cName) patientInfo += `שם מאובחן: ${cName}`;
-            if (cId) patientInfo += (patientInfo ? ` | ת.ז: ${cId}` : `ת.ז: ${cId}`);
-            summaryParts.push(patientInfo);
-        }
 
         // Only show notes if filled
         if (freeNotes) summaryParts.push(`הערות:\n${freeNotes}`);
@@ -1910,7 +1939,7 @@
     function closeWikiModal() { document.getElementById('wiki-modal').classList.add('hidden'); }
 
     function resetAllFields() {
-        ['child-name','child-age','child-id','appointment-date','free-notes','claim-number','commitment-number'].forEach(id => {
+        ['child-name','birth-year','child-grade','appointment-date','free-notes','claim-number','commitment-number'].forEach(id => {
             if(document.getElementById(id)) document.getElementById(id).value = '';
         });
         
@@ -2062,7 +2091,7 @@ MOXO (פחות מ-2 ימי עסקים):
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    model: 'claude-sonnet-4-20250514',
+                    model: 'claude-sonnet-4-5',
                     max_tokens: 1000,
                     system: maromKnowledgeBase,
                     messages: botHistory.slice(-10)
@@ -2106,6 +2135,14 @@ MOXO (פחות מ-2 ימי עסקים):
         return div;
     }
     // ========== END AI BOT ==========
+
+    function calcAge() {
+        const birthYear = parseInt(document.getElementById('birth-year').value);
+        const result = document.getElementById('age-result');
+        if (!birthYear || birthYear < 1950 || birthYear > 2025) { result.textContent = ''; return; }
+        const age = new Date().getFullYear() - birthYear;
+        result.textContent = `בן/בת ${age}`;
+    }
 
     function showToast(message, type = 'success') {
         const container = document.getElementById('toast-container');
