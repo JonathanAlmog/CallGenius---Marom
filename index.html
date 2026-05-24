@@ -264,6 +264,7 @@
                                 <div>
                                     <h4 class="font-bold text-sm text-zinc-900 dark:text-white">פסיכודידקטי</h4>
                                     <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-1">פסיכולוגי מקיף + למידה</p>
+                                    <p class="text-[10px] text-brand-cyan/80 font-bold mt-1">⏱ הפרש: ש"ש ללא הרחבות / ש"ו עם הרחבות</p>
                                 </div>
                             </button>
                             <button onclick="selectDiagnosis('adhd-doctor')" id="diag-adhd-doctor" class="diag-card col-span-1 p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan text-right transition-all flex flex-col justify-between cursor-pointer">
@@ -271,6 +272,7 @@
                                 <div>
                                     <h4 class="font-bold text-sm text-zinc-900 dark:text-white">אבחון קשב (רופא)</h4>
                                     <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-1">קליני מלא + מבדק MOXO</p>
+                                    <p class="text-[10px] text-indigo-400 font-bold mt-1">⏱ הפרש: כשעה וחצי</p>
                                 </div>
                             </button>
                             <button onclick="selectDiagnosis('moxo-only')" id="diag-moxo-only" class="diag-card col-span-2 p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan text-right transition-all flex flex-col justify-between cursor-pointer">
@@ -278,6 +280,7 @@
                                 <div>
                                     <h4 class="font-bold text-sm text-zinc-900 dark:text-white">מבדק MOXO בלבד</h4>
                                     <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-1">מבדק ממוחשב (חלק 1/2)</p>
+                                    <p class="text-[10px] text-purple-400 font-bold mt-1">⏱ הפרש: כ-20 דקות (חלק 1) | כשעה וחצי (2 חלקים)</p>
                                 </div>
                             </button>
                             <button onclick="selectDiagnosis('didactic')" id="diag-didactic" class="diag-card col-span-1 p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan text-right transition-all flex flex-col justify-between cursor-pointer">
@@ -285,6 +288,7 @@
                                 <div>
                                     <h4 class="font-bold text-sm text-zinc-900 dark:text-white">דידקטי בלבד</h4>
                                     <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-1">מיפוי כישורי למידה בלבד</p>
+                                    <p class="text-[10px] text-brand-teal/80 font-bold mt-1">⏱ הפרש: כשעתיים</p>
                                 </div>
                             </button>
                             <button onclick="selectDiagnosis('follow-up')" id="diag-follow-up" class="diag-card col-span-1 p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan text-right transition-all flex flex-col justify-between cursor-pointer">
@@ -292,6 +296,7 @@
                                 <div>
                                     <h4 class="font-bold text-sm text-zinc-900 dark:text-white">שיחת מעקב / הפניה</h4>
                                     <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-1">מעקב תרופתי / הפניה בלבד</p>
+                                    <p class="text-[10px] text-amber-400 font-bold mt-1">⏱ הפרש: כ-15 דקות</p>
                                 </div>
                             </button>
                         </div>
@@ -1824,10 +1829,8 @@
 
     // Cleaned up CRM summary strictly adhering to constraints
     function updateCRM() {
-        const cName = document.getElementById('child-name').value.trim();
-        const cId = document.getElementById('child-id').value.trim();
         const fund = document.getElementById('health-fund').value;
-        const freeNotes = document.getElementById('free-notes').value.trim();
+        const freeNotes = document.getElementById('free-notes') ? document.getElementById('free-notes').value.trim() : '';
         const claimNum = document.getElementById('claim-number').value.trim();
         const commitment = document.getElementById('commitment-number').value.trim();
         const finalPrice = document.getElementById('final-price-display').innerText;
@@ -1836,11 +1839,15 @@
         
         let inclusions = [];
         if (selectedDiagnosis === 'psychodidactic' || selectedDiagnosis === 'didactic') {
-            if(document.getElementById('ext-math').checked) inclusions.push('הרחבה במתמטיקה');
-            if(document.getElementById('ext-english').checked) inclusions.push('הרחבה באנגלית');
-            const exp = document.querySelector('input[name="express-option"]:checked').value;
-            if(exp === 'express') inclusions.push('אקספרס 12 יום');
-            if(exp === 'express-plus') inclusions.push('אקספרס+ 4 ימים');
+            const extMath = document.getElementById('ext-math');
+            const extEng = document.getElementById('ext-english');
+            if(extMath && extMath.checked) inclusions.push('הרחבה במתמטיקה');
+            if(extEng && extEng.checked) inclusions.push('הרחבה באנגלית');
+            const expEl = document.querySelector('input[name="express-option"]:checked');
+            if(expEl) {
+                if(expEl.value === 'express') inclusions.push('אקספרס 12 יום');
+                if(expEl.value === 'express-plus') inclusions.push('אקספרס+ 4 ימים');
+            }
         } else if (selectedDiagnosis === 'adhd-doctor') {
             const adhdType = document.getElementById('adhd-type-select') ? document.getElementById('adhd-type-select').value : 'frontal';
             const typeLabels = { frontal: 'פרונטלי', online: 'אונליין', 'moxo-based': 'פגישת רופא ע"ס מוקסו' };
@@ -1858,21 +1865,21 @@
 
         let summaryParts = [];
         summaryParts.push(`תאריך שיחה: ${todayDate}`);
-
-        // Only show notes if filled
         if (freeNotes) summaryParts.push(`הערות:\n${freeNotes}`);
-
         summaryParts.push(`--------------------------------------`);
         summaryParts.push(`סוג השירות: ${diagHeb}${inclusions.length ? ' – ' + inclusions.join(', ') : ''}`);
         summaryParts.push(`ביטוח רפואי: ${fundHebName(fund)}`);
         summaryParts.push(`מחיר כולל: ${finalPrice}`);
-
-        // Only show if filled
         if (claimNum) summaryParts.push(`מספר תביעה: ${claimNum}`);
         if (commitment) summaryParts.push(`התחייבות: ${commitment}`);
 
-        const isDivorced = document.getElementById('parents-divorced').checked;
-        if (isDivorced) summaryParts.push(`מצב הורים: גרושים ⚠️ — נדרשת הסכמת שני הורים + שאלון לכל הורה`);
+        const divorcedEl = document.getElementById('parents-divorced');
+        const marriedEl = document.getElementById('parents-married');
+        if (divorcedEl && divorcedEl.checked) {
+            summaryParts.push(`מצב הורים: גרושים ⚠️ — נדרשת הסכמת שני הורים + שאלון לכל הורה`);
+        } else if (marriedEl && marriedEl.checked) {
+            summaryParts.push(`מצב הורים: נשואים`);
+        }
 
         document.getElementById('crm-summary').value = summaryParts.join('\n');
     }
