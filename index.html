@@ -197,17 +197,29 @@
 
                         <!-- Parents status -->
                         <div class="mt-4 pt-4 border-t border-zinc-100 dark:border-zinc-800">
-                            <label class="block text-xs font-bold text-zinc-600 dark:text-zinc-300 mb-2">מצב הורים:</label>
-                            <div class="flex gap-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+                                <div>
+                                    <label class="block text-xs font-bold text-zinc-600 dark:text-zinc-300 mb-1">ת.ז. המאובחן/ת</label>
+                                    <input type="text" id="child-id" oninput="updateAllOutputs();" placeholder="9 ספרות" class="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-zinc-900 dark:text-white focus:outline-none focus:border-brand-cyan transition">
+                                </div>
+                            </div>
+                            <label class="block text-xs font-bold text-zinc-600 dark:text-zinc-300 mb-2">מצב הורים / מגיש:</label>
+                            <div class="flex gap-4 flex-wrap">
                                 <label class="flex items-center gap-2 text-xs font-medium text-zinc-700 dark:text-zinc-300 cursor-pointer">
                                     <input type="radio" name="parents-status" id="parents-married" value="married" checked onchange="updateParentsStatus();" class="accent-brand-cyan"> נשואים
                                 </label>
                                 <label class="flex items-center gap-2 text-xs font-medium text-zinc-700 dark:text-zinc-300 cursor-pointer">
                                     <input type="radio" name="parents-status" id="parents-divorced" value="divorced" onchange="updateParentsStatus();" class="accent-brand-danger"> גרושים
                                 </label>
+                                <label class="flex items-center gap-2 text-xs font-medium text-zinc-700 dark:text-zinc-300 cursor-pointer">
+                                    <input type="radio" name="parents-status" id="parents-adult" value="adult" onchange="updateParentsStatus();" class="accent-amber-500"> אדם בוגר
+                                </label>
                             </div>
                             <div id="divorced-reminder" class="hidden mt-2 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-3 text-xs text-red-800 dark:text-red-300 font-bold">
                                 ⚠️ הורים גרושים: יש לשלוח שאלון אינטייק לכל הורה בנפרד + לקבל חתימה על טפסי הסכמה משני ההורים. בצ'קליסט — השאר את פריט "הסכמת הורים גרושים".
+                            </div>
+                            <div id="adult-reminder" class="hidden mt-2 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-3 text-xs text-amber-800 dark:text-amber-300 font-bold">
+                                ℹ️ אדם בוגר: אין צורך באישור הורים. יש לשלוח שאלון אישי בלבד. בצ'קליסט — מחק פריט "הסכמת הורים גרושים".
                             </div>
                         </div>
                     </div>
@@ -264,7 +276,7 @@
                                 <div>
                                     <h4 class="font-bold text-sm text-zinc-900 dark:text-white">פסיכודידקטי</h4>
                                     <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-1">פסיכולוגי מקיף + למידה</p>
-                                    <p class="text-[10px] text-brand-cyan/80 font-bold mt-1">⏱ הפרש: ש"ש ללא הרחבות / ש"ו עם הרחבות</p>
+                                    <p class="text-[10px] text-brand-cyan/80 font-bold mt-1">⏱ רישום: 120 דק' | בפועל: ש"ש / ש"ו עם הרחבות</p>
                                 </div>
                             </button>
                             <button onclick="selectDiagnosis('adhd-doctor')" id="diag-adhd-doctor" class="diag-card col-span-1 p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan text-right transition-all flex flex-col justify-between cursor-pointer">
@@ -272,7 +284,7 @@
                                 <div>
                                     <h4 class="font-bold text-sm text-zinc-900 dark:text-white">אבחון קשב (רופא)</h4>
                                     <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-1">קליני מלא + מבדק MOXO</p>
-                                    <p class="text-[10px] text-indigo-400 font-bold mt-1">⏱ הפרש: כשעה וחצי</p>
+                                    <p class="text-[10px] text-indigo-400 font-bold mt-1">⏱ רישום: 15/20 דק' | בפועל: כשעה וחצי</p>
                                 </div>
                             </button>
                             <button onclick="selectDiagnosis('moxo-only')" id="diag-moxo-only" class="diag-card col-span-2 p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan text-right transition-all flex flex-col justify-between cursor-pointer">
@@ -280,7 +292,7 @@
                                 <div>
                                     <h4 class="font-bold text-sm text-zinc-900 dark:text-white">מבדק MOXO בלבד</h4>
                                     <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-1">מבדק ממוחשב (חלק 1/2)</p>
-                                    <p class="text-[10px] text-purple-400 font-bold mt-1">⏱ הפרש: כ-20 דקות (חלק 1) | כשעה וחצי (2 חלקים)</p>
+                                    <p class="text-[10px] text-purple-400 font-bold mt-1">⏱ רישום: 30/15 דק' (פרונטלי/אונליין) | בפועל: 20 דק' / ש"ו</p>
                                 </div>
                             </button>
                             <button onclick="selectDiagnosis('didactic')" id="diag-didactic" class="diag-card col-span-1 p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan text-right transition-all flex flex-col justify-between cursor-pointer">
@@ -288,7 +300,7 @@
                                 <div>
                                     <h4 class="font-bold text-sm text-zinc-900 dark:text-white">דידקטי בלבד</h4>
                                     <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-1">מיפוי כישורי למידה בלבד</p>
-                                    <p class="text-[10px] text-brand-teal/80 font-bold mt-1">⏱ הפרש: כשעתיים</p>
+                                    <p class="text-[10px] text-brand-teal/80 font-bold mt-1">⏱ רישום: 60 דק' | בפועל: כשעתיים</p>
                                 </div>
                             </button>
                             <button onclick="selectDiagnosis('follow-up')" id="diag-follow-up" class="diag-card col-span-1 p-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 hover:border-brand-cyan text-right transition-all flex flex-col justify-between cursor-pointer">
@@ -296,7 +308,7 @@
                                 <div>
                                     <h4 class="font-bold text-sm text-zinc-900 dark:text-white">שיחת מעקב / הפניה</h4>
                                     <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-1">מעקב תרופתי / הפניה בלבד</p>
-                                    <p class="text-[10px] text-amber-400 font-bold mt-1">⏱ הפרש: כ-15 דקות</p>
+                                    <p class="text-[10px] text-amber-400 font-bold mt-1">⏱ רישום: 10/15 דק' | בפועל: כ-15 דקות</p>
                                 </div>
                             </button>
                         </div>
@@ -484,6 +496,16 @@
                                     <label class="block text-[11px] text-zinc-600 dark:text-zinc-400 mb-1">מספר התחייבות (פמ"י/ביקורופא):</label>
                                     <input type="text" id="commitment-number" oninput="updateAllOutputs();" placeholder="הכנס מספר התחייבות (אם יש)" class="w-full bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-lg p-2 text-xs text-zinc-900 dark:text-white focus:outline-none focus:border-brand-cyan text-left">
                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic scheduling reminders -->
+                        <div id="scheduling-reminders-box" class="hidden bg-amber-50 dark:bg-amber-950/20 border border-amber-300 dark:border-amber-700 rounded-xl p-4 space-y-2">
+                            <span class="font-bold text-amber-800 dark:text-amber-300 text-xs flex items-center gap-2"><i class="fa-solid fa-triangle-exclamation"></i> תזכורות לפני קביעת התור</span>
+                            <div id="scheduling-reminders-content" class="space-y-1.5 text-xs text-amber-900 dark:text-amber-200"></div>
+                            <!-- General reminder always shown -->
+                            <div class="pt-2 border-t border-amber-200 dark:border-amber-700 text-xs font-bold text-amber-800 dark:text-amber-300">
+                                🔍 ודא שנכנסת לכרטיס הלקוח הנכון ושבחרת את היומן והסניף המתאימים!
                             </div>
                         </div>
 
@@ -1116,6 +1138,36 @@
             `
         },
         {
+            id: 'doc-adhd-psychiatric-check',
+            category: 'clinical',
+            title: 'אבחון קשב – בדיקות חובה לפני התור',
+            summary: 'רקע פסיכיאטרי, אוטיזם, וסיכום רפואי',
+            content: `
+                <p class="text-zinc-900 dark:text-zinc-100 font-medium">לפני קביעת תור לאבחון קשב וריכוז, חובה לוודא שני דברים:</p>
+                <ul class="list-disc list-inside space-y-2 mt-3 text-zinc-900 dark:text-zinc-100">
+                    <li><strong>ללא רקע פסיכיאטרי:</strong> אבחון קשב אינו מתאים למי שיש לו אבחנות פסיכיאטריות קיימות. יש לשאול את הלקוח ולוודא שאין.</li>
+                    <li><strong>ללא אוטיזם (ASD):</strong> מי שאובחן עם ASD אינו מתאים לאבחון קשב אצלנו.</li>
+                    <li><strong>סיכום מידע רפואי:</strong> יש להזכיר ללקוח לשלוח סיכום רפואי מהקופה לפני התור — הרופא חייב לוודא שאין מחלות רקע.</li>
+                </ul>
+                <p class="text-brand-danger font-bold mt-3">אם אחד מהתנאים לא מתקיים — לא ניתן לבצע אבחון!</p>
+            `
+        },
+        {
+            id: 'doc-moxo-clalit-referral',
+            category: 'moxo',
+            title: 'מוקסו כללית – הפניה ואישור מרגרט',
+            summary: 'חובת הפניה בתוקף + אישור מרגרט לפני סגירת תור',
+            content: `
+                <p class="text-zinc-900 dark:text-zinc-100 font-medium">בכל קביעת תור למבדק MOXO ממומן ע"י כללית:</p>
+                <ul class="list-disc list-inside space-y-2 mt-3 text-zinc-900 dark:text-zinc-100">
+                    <li><strong>הפניה רפואית בתוקף:</strong> חובה לבדוק שיש הפניה מנוירולוג/פסיכיאטר/רופא קשב, בתוקף עד 6 חודשים אחורה.</li>
+                    <li><strong>אישור מרגרט:</strong> לפני שמשבצים את התור ביומן, חובה לאשר את ההפניה מול מרגרט.</li>
+                    <li><strong>4 כללי הזהב לבדיקת הפניה:</strong> (1) התמחות הרופא (2) תאריך הנפקה (3) מוזכר MOXO (4) חתימה דיגיטלית/פיזית.</li>
+                </ul>
+                <p class="text-brand-danger font-bold mt-3">אין לסגור תור לפני שמרגרט אישרה את ההפניה!</p>
+            `
+        },
+        {
             id: 'doc-shift-tasks-complete',
             category: 'scripts',
             title: 'צ\'קליסט משמרת',
@@ -1418,7 +1470,7 @@
 
         updateAllOutputs();
         // Force duration refresh when entering step 4
-        if (stepNum === 4) setTimeout(() => updateApptNote(), 50);
+        if (stepNum === 4) setTimeout(() => { updateApptNote(); updateSchedulingReminders(); }, 50);
     }
 
     function nextStep() {
@@ -1875,8 +1927,13 @@
 
         const divorcedEl = document.getElementById('parents-divorced');
         const marriedEl = document.getElementById('parents-married');
+        const adultEl = document.getElementById('parents-adult');
+        const childId = document.getElementById('child-id') ? document.getElementById('child-id').value.trim() : '';
+        if (childId) summaryParts.push(`ת.ז: ${childId}`);
         if (divorcedEl && divorcedEl.checked) {
             summaryParts.push(`מצב הורים: גרושים ⚠️ — נדרשת הסכמת שני הורים + שאלון לכל הורה`);
+        } else if (adultEl && adultEl.checked) {
+            summaryParts.push(`מצב: אדם בוגר — שאלון אישי בלבד, אין צורך באישור הורים`);
         } else if (marriedEl && marriedEl.checked) {
             summaryParts.push(`מצב הורים: נשואים`);
         }
@@ -1984,9 +2041,11 @@
     function closeWikiModal() { document.getElementById('wiki-modal').classList.add('hidden'); }
 
     function resetAllFields() {
-        ['child-name','birth-year','child-grade','appointment-date','free-notes','claim-number','commitment-number'].forEach(id => {
+        ['child-name','birth-year','child-grade','child-id','appointment-date','free-notes','claim-number','commitment-number'].forEach(id => {
             if(document.getElementById(id)) document.getElementById(id).value = '';
         });
+        document.getElementById('parents-married').checked = true;
+        ['divorced-reminder','adult-reminder'].forEach(id => { if(document.getElementById(id)) document.getElementById(id).classList.add('hidden'); });
         
         document.getElementById('health-fund').value = 'private';
         document.getElementById('insurance-arrangement').value = 'none';
@@ -2181,6 +2240,35 @@ MOXO (פחות מ-2 ימי עסקים):
     }
     // ========== END AI BOT ==========
 
+    function updateSchedulingReminders() {        const box = document.getElementById('scheduling-reminders-box');
+        const content = document.getElementById('scheduling-reminders-content');
+        if (!box || !content) return;
+
+        let reminders = [];
+        const fund = document.getElementById('health-fund').value;
+        const isClalitAny = fund === 'clalit-platinum' || fund === 'clalit-mushlam';
+
+        if (selectedDiagnosis === 'adhd-doctor') {
+            reminders.push('⚠️ ודא שאין רקע פסיכיאטרי או אוטיזם אצל הנבדק!');
+            reminders.push('⚠️ להזכיר ללקוח לשלוח סיכום מידע רפואי מהקופה לפני התור.');
+        }
+
+        if (selectedDiagnosis === 'moxo-only' && isClalitAny) {
+            reminders.push('⚠️ ודא שיש הפניה רפואית בתוקף לפני סגירת התור!');
+            reminders.push('⚠️ חובה לאשר את ההפניה מול מרגרט לפני שיבוץ התור ביומן.');
+        }
+
+        if (reminders.length > 0) {
+            content.innerHTML = reminders.map(r => `<div class="flex items-start gap-2"><span>${r}</span></div>`).join('');
+            box.classList.remove('hidden');
+        } else if (selectedDiagnosis) {
+            content.innerHTML = '';
+            box.classList.remove('hidden');
+        } else {
+            box.classList.add('hidden');
+        }
+    }
+
     function calcAge() {
         const birthYear = parseInt(document.getElementById('birth-year').value);
         const result = document.getElementById('age-result');
@@ -2191,9 +2279,11 @@ MOXO (פחות מ-2 ימי עסקים):
 
     function updateParentsStatus() {
         const isDivorced = document.getElementById('parents-divorced').checked;
-        const reminder = document.getElementById('divorced-reminder');
-        if (isDivorced) reminder.classList.remove('hidden');
-        else reminder.classList.add('hidden');
+        const isAdult = document.getElementById('parents-adult').checked;
+        const divorcedReminder = document.getElementById('divorced-reminder');
+        const adultReminder = document.getElementById('adult-reminder');
+        if (divorcedReminder) divorcedReminder.classList.toggle('hidden', !isDivorced);
+        if (adultReminder) adultReminder.classList.toggle('hidden', !isAdult);
         updateAllOutputs();
     }
 
